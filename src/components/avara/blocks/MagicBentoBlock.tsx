@@ -1,0 +1,127 @@
+// Avara UI · MIT License · Source: https://avaraui.com/r/magic-bento.json
+'use client'
+
+import { cn } from '@/lib/utils'
+import React from 'react'
+import type { ReactNode } from 'react'
+
+// ==========================================
+// BENTO GRID CONTAINER
+// ==========================================
+export interface MagicBentoProps extends React.HTMLAttributes<HTMLDivElement> {
+  children: ReactNode
+}
+
+export const MagicBento = React.forwardRef<HTMLDivElement, MagicBentoProps>(
+  ({ children, className, ...props }, ref) => {
+    return (
+      <div
+        ref={ref}
+        className={cn(
+          'mx-auto grid w-full max-w-7xl auto-rows-[minmax(180px,auto)] grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4',
+          className,
+        )}
+        {...props}
+      >
+        {children}
+      </div>
+    )
+  },
+)
+MagicBento.displayName = 'MagicBento'
+
+// ==========================================
+// BENTO CARD (With Magic Hover Effects)
+// ==========================================
+export interface MagicBentoCardProps extends React.HTMLAttributes<HTMLDivElement> {
+  children: ReactNode
+  highlight?: boolean // Activates the continuously spinning border
+}
+
+// Every glow reads from these two. They resolve on the card itself so the
+// component works with nothing but the shadcn theme, yet any ancestor can
+// still set `--magic-color` / `--magic-glow` to re-tint a whole grid.
+const magicVars = {
+  '--mb-color': 'var(--magic-color, var(--primary, #6366f1))',
+  '--mb-glow':
+    'var(--magic-glow, color-mix(in srgb, var(--mb-color) 15%, transparent))',
+} as React.CSSProperties
+
+export const MagicBentoCard = React.forwardRef<
+  HTMLDivElement,
+  MagicBentoCardProps
+>(({ children, className, highlight = false, style, ...props }, ref) => {
+  const spotlightRef = React.useRef<HTMLDivElement>(null)
+  const glowRef = React.useRef<HTMLDivElement>(null)
+
+  // Track mouse position relative to the card. It goes straight into the
+  // `--mb-x` / `--mb-y` variables of the two layers that read it — no React
+  // state, so a mouse move never re-renders.
+  function handleMouseMove({
+    currentTarget,
+    clientX,
+    clientY,
+  }: React.MouseEvent) {
+    const { left, top } = currentTarget.getBoundingClientRect()
+    for (const layer of [spotlightRef.current, glowRef.current]) {
+      layer?.style.setProperty('--mb-x', `${clientX - left}px`)
+      layer?.style.setProperty('--mb-y', `${clientY - top}px`)
+    }
+  }
+
+  return (
+    <div
+      ref={ref}
+      onMouseMove={handleMouseMove}
+      className={cn(
+        'group relative flex min-h-[110px] flex-col overflow-hidden rounded-xl border border-transparent bg-muted transition-transform duration-300 active:scale-[0.98]',
+        className,
+      )}
+      style={{ ...magicVars, ...style }}
+      {...props}
+    >
+      {/* 1. Base Static Border */}
+      <div className="absolute inset-0 rounded-xl bg-muted transition-colors" />
+
+      {/* 2. Highlight: Continuously Spinning Conic Gradient */}
+      {highlight && (
+        <div className="absolute inset-[-100%] animate-[spin_4s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,transparent_0%,var(--mb-color)_50%,transparent_100%)] opacity-70 transition-opacity duration-500 group-hover:opacity-100 dark:opacity-90" />
+      )}
+
+      {/* 3. Hover: Mouse-Tracking Border Spotlight */}
+      <div
+        ref={spotlightRef}
+        className="absolute inset-0 rounded-xl opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+        style={
+          {
+            '--mb-x': '0px',
+            '--mb-y': '0px',
+            background: `radial-gradient(600px circle at var(--mb-x) var(--mb-y), var(--mb-color), transparent 40%)`,
+          } as React.CSSProperties
+        }
+      />
+
+      {/* 4. Content Mask (Creates the 1px border effect) */}
+      <div className="absolute inset-[1px] z-0 rounded-[23px] bg-card transition-colors" />
+
+      {/* 5. Hover: Inner Card Soft Glow (FIXED: mix-blend-normal in light mode so white background can be tinted!) */}
+      <div
+        ref={glowRef}
+        className="pointer-events-none absolute inset-0 z-10 opacity-0 mix-blend-normal transition-opacity duration-300 group-hover:opacity-100 dark:mix-blend-screen"
+        style={
+          {
+            '--mb-x': '0px',
+            '--mb-y': '0px',
+            background: `radial-gradient(600px circle at var(--mb-x) var(--mb-y), var(--mb-glow), transparent 40%)`,
+          } as React.CSSProperties
+        }
+      />
+
+      {/* 6. Actual Content Area */}
+      <div className="pointer-events-auto relative z-20 flex h-full flex-col p-3 sm:p-3">
+        {children}
+      </div>
+    </div>
+  )
+})
+MagicBentoCard.displayName = 'MagicBentoCard'
