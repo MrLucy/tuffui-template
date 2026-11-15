@@ -4,25 +4,26 @@
 
 import {
   Database,
+  type Icon,
   SidebarSimple,
   Star,
   X,
-  type Icon,
 } from '@phosphor-icons/react'
 import {
   AnimatePresence,
-  MotionConfig,
   motion,
+  MotionConfig,
   useReducedMotion,
 } from 'motion/react'
 import { useEffect, useRef, useState } from 'react'
+
 import { IconButton } from '@/components/ui/action-button'
-import { AgentComposer } from '@/components/ui/agent-composer'
 import { Avatar } from '@/components/ui/agent-avatar'
+import { AgentComposer } from '@/components/ui/agent-composer'
 import { ChatThread, type ThreadMessage } from '@/components/ui/chat-thread'
 import {
-  PromptSuggestions,
   type PromptSuggestion,
+  PromptSuggestions,
 } from '@/components/ui/prompt-suggestions'
 import { StatusPill, Tag } from '@/components/ui/status-pill'
 import { Tooltip } from '@/components/ui/tooltip-hint'

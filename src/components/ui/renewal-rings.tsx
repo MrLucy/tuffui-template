@@ -2,7 +2,6 @@
 // Free to use. If it helps you, you can support it: https://ko-fi.com/yurigokoryan
 'use client'
 
-import { formatCount } from '@/lib/locale'
 import { ClockCountdown, type Icon } from '@phosphor-icons/react'
 import {
   AnimatePresence,
@@ -16,6 +15,7 @@ import { Button } from '@/components/ui/action-button'
 import { RollingNumber } from '@/components/ui/rolling-number'
 import { StatusPill } from '@/components/ui/status-pill'
 import { Inset, Panel, Shell, ShellHeader } from '@/components/ui/surface'
+import { formatCount } from '@/lib/locale'
 import {
   CSS_EASE_OUT,
   EASE_OUT,

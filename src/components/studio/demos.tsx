@@ -1,7 +1,7 @@
-import { useState } from 'react'
+import { ArrowUpRight, Sparkles } from 'lucide-react'
 import type { ReactNode } from 'react'
-import { Sparkles, ArrowUpRight } from 'lucide-react'
-import * as D from './data'
+import { useState } from 'react'
+
 import * as ActionButtonUI from '@/components/ui/action-button'
 import * as ActionMenuUI from '@/components/ui/action-menu'
 import * as AgentAvatarUI from '@/components/ui/agent-avatar'
@@ -88,10 +88,8 @@ import * as ToolCallGraphUI from '@/components/ui/tool-call-graph'
 import * as TooltipHintUI from '@/components/ui/tooltip-hint'
 import * as UsageSummaryUI from '@/components/ui/usage-summary'
 import * as UserMessageUI from '@/components/ui/user-message'
-
-export const notify = (message = '已完成本地模拟操作') => {
-  ToastStackUI.toast.success(message)
-}
+import * as D from '@/data/studio'
+import { notify } from '@/lib/notify'
 
 export function RaceDemo({ compact = false }: { compact?: boolean }) {
   const [progress, setProgress] = useState(0)
@@ -1317,7 +1315,6 @@ function RollingDemo() {
     </div>
   )
 }
-export const componentNames = Object.keys(demoMap)
 export function Demo({ name }: { name: string }) {
   return <>{demoMap[name]?.()}</>
 }

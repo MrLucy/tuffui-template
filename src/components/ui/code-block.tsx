@@ -3,8 +3,9 @@
 'use client'
 
 import { Check, Copy, TextAlignLeft } from '@phosphor-icons/react'
-import { AnimatePresence, MotionConfig, motion } from 'motion/react'
+import { AnimatePresence, motion, MotionConfig } from 'motion/react'
 import { useEffect, useId, useMemo, useRef, useState } from 'react'
+
 import { IconButton } from '@/components/ui/action-button'
 import { Tag } from '@/components/ui/status-pill'
 import { Panel, Shell } from '@/components/ui/surface'
@@ -148,7 +149,9 @@ export function CodeBlock({
   const copy = async () => {
     try {
       await navigator.clipboard.writeText(code)
-    } catch {}
+    } catch {
+      // Clipboard access can be denied; keep the local callback available.
+    }
     onCopy?.(code)
     setCopied(true)
     clearTimeout(timer.current)

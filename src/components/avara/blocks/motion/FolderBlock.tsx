@@ -1,15 +1,14 @@
 // Avara UI · MIT License · Source: https://avaraui.com/r/folder-motion.json
 'use client'
 
-import { cn } from '@/lib/utils'
+import { ChevronLeft, ChevronRight, type LucideIcon, X } from 'lucide-react'
 import {
-  AnimatePresence,
   animate,
+  AnimatePresence,
   motion,
   type PanInfo,
   useReducedMotion,
 } from 'motion/react'
-import { ChevronLeft, ChevronRight, type LucideIcon, X } from 'lucide-react'
 import React, {
   type ChangeEvent,
   type DragEvent,
@@ -20,11 +19,13 @@ import React, {
   useRef,
   useState,
 } from 'react'
+
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
 } from '@/components/avara/blocks/TooltipBlock'
+import { cn } from '@/lib/utils'
 
 export interface FolderFile {
   /** Optional image thumbnail URL — shown as a photo peeking out. */

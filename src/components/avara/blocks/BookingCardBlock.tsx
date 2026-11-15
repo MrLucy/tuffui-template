@@ -1,7 +1,6 @@
 // Avara UI · MIT License · Source: https://avaraui.com/r/booking-card.json
 'use client'
 
-import { cn } from '@/lib/utils'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import React, {
   createContext,
@@ -11,6 +10,9 @@ import React, {
   useState,
   useSyncExternalStore,
 } from 'react'
+
+import { cn } from '@/lib/utils'
+
 import { useSurface } from './glass-panel-context'
 
 // ==========================================

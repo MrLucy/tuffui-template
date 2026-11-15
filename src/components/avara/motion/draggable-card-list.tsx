@@ -1,16 +1,17 @@
 // Avara UI · MIT License · Source: https://avaraui.com/r/draggable-card-list-motion.json
 'use client'
 
-import { useState } from 'react'
-import { Reorder, useDragControls } from 'motion/react'
-import { cn } from '@/lib/utils'
 import {
-  GripVertical,
   Calendar,
-  ExternalLink,
   CheckCircle2,
   Circle,
+  ExternalLink,
+  GripVertical,
 } from 'lucide-react'
+import { Reorder, useDragControls } from 'motion/react'
+import { useState } from 'react'
+
+import { cn } from '@/lib/utils'
 
 export interface DraggableCardItem {
   id: string | number

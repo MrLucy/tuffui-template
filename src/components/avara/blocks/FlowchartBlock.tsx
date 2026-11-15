@@ -1,8 +1,10 @@
 // Avara UI · MIT License · Source: https://avaraui.com/r/flowchart.json
 'use client'
 
-import { cn } from '@/lib/utils'
 import React, { forwardRef, useLayoutEffect, useRef, useState } from 'react'
+
+import { cn } from '@/lib/utils'
+
 import { FlowchartContext, useFlowchart } from './flowchart-context'
 
 // ==========================================

@@ -1,10 +1,10 @@
-import {
-  allComponentLabels as componentLabels,
-  allComponentNames as componentNames,
-  matchesComponent,
-} from '@/features/studio/component-registry'
-import { useEffect, useRef, useState } from 'react'
-import { Link, NavLink, Outlet, useLocation, useNavigate } from 'react-router'
+import '@/styles/studio.css'
+import '@/styles/studio-adjustments.css'
+import '@/styles/studio-theme.css'
+import '@/styles/bento.css'
+import '@/styles/bento-packed.css'
+import '@/styles/avara.css'
+
 import {
   ArrowUpRight,
   Bell,
@@ -19,19 +19,24 @@ import {
   Sparkles,
   X,
 } from 'lucide-react'
-import { navigation } from '@/features/studio/navigation'
-import { notify } from '@/features/studio/demos'
-import { Avatar } from '@/components/ui/agent-avatar'
+import { useEffect, useRef, useState } from 'react'
+import { Link, NavLink, Outlet, useLocation, useNavigate } from 'react-router'
+
 import { Button } from '@/components/ui/action-button'
+import { Avatar } from '@/components/ui/agent-avatar'
+import { Switch } from '@/components/ui/choice-controls'
 import { KeyCombo } from '@/components/ui/key-hint'
 import { Dialog } from '@/components/ui/modal-sheet'
 import { Popover } from '@/components/ui/popover-panel'
 import { TextField } from '@/components/ui/text-field'
 import { Toaster } from '@/components/ui/toast-stack'
-import { Switch } from '@/components/ui/choice-controls'
-import '@/features/studio/studio.css'
-import '@/features/studio/bento.css'
-import '@/features/studio/avara.css'
+import {
+  allComponentLabels as componentLabels,
+  allComponentNames as componentNames,
+  matchesComponent,
+} from '@/config/component-registry'
+import { navigation } from '@/config/navigation'
+import { notify } from '@/lib/notify'
 
 export function RootLayout() {
   const location = useLocation()

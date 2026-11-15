@@ -1,14 +1,15 @@
 // Avara UI · MIT License · Source: https://avaraui.com/r/card-stack-motion.json
 'use client'
 
-import React, { useState } from 'react'
+import { ArrowLeft, ArrowRight, ArrowUpRight, RotateCcw } from 'lucide-react'
 import {
   AnimatePresence,
   motion,
   useMotionValue,
   useTransform,
 } from 'motion/react'
-import { ArrowLeft, ArrowRight, ArrowUpRight, RotateCcw } from 'lucide-react'
+import React, { useState } from 'react'
+
 import { cn } from '@/lib/utils'
 
 export interface CardStackItem {

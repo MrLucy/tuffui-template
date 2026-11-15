@@ -4,6 +4,7 @@
 
 import { ArrowsIn, Lock, Warning } from '@phosphor-icons/react'
 import { MotionConfig } from 'motion/react'
+
 import { Button } from '@/components/ui/action-button'
 import { RollingNumber } from '@/components/ui/rolling-number'
 import { Tag } from '@/components/ui/status-pill'

@@ -1,8 +1,9 @@
 // Avara UI · MIT License · Source: https://avaraui.com/r/conversation-timeline.json
 'use client'
 
-import { cn } from '@/lib/utils'
 import { useEffect, useRef, useState, useSyncExternalStore } from 'react'
+
+import { cn } from '@/lib/utils'
 
 const REDUCED_MOTION = '(prefers-reduced-motion: reduce)'
 const subscribeReducedMotion = (onChange: () => void) => {

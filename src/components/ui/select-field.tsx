@@ -9,9 +9,10 @@ import {
   Select as SelectPrimitive,
 } from 'radix-ui'
 import { useId, useMemo, useState } from 'react'
+
+import { Spinner } from '@/components/ui/loader'
 import { EASE_OUT, instant } from '@/lib/motion-tokens'
 import { cn } from '@/lib/utils'
-import { Spinner } from '@/components/ui/loader'
 
 // Radix's `asChild`, passed as a spread: the shadcn CLI rewrites a literal
 // `asChild` attribute into Base UI's `render` prop for base-* styles, which

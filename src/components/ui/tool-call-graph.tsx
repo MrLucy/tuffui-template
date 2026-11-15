@@ -3,8 +3,9 @@
 'use client'
 
 import { Robot, TreeStructure } from '@phosphor-icons/react'
-import { MotionConfig, motion, useReducedMotion } from 'motion/react'
+import { motion, MotionConfig, useReducedMotion } from 'motion/react'
 import { useId, useLayoutEffect, useRef, useState } from 'react'
+
 import { Segmented } from '@/components/ui/segmented-control'
 import { Panel, Shell, ShellHeader } from '@/components/ui/surface'
 import { EASE_OUT, spring } from '@/lib/motion-tokens'

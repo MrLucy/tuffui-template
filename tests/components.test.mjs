@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict'
 import { test } from 'node:test'
+
 import { createElement } from 'react'
 import { renderToString } from 'react-dom/server'
 import { createServer } from 'vite'
@@ -7,15 +8,11 @@ import { createServer } from 'vite'
 test('全部 TuffUI 组件预览均可渲染且分类完整', async () => {
   const server = await createServer({ server: { middlewareMode: true } })
   try {
-    const { Demo, componentNames } = await server.ssrLoadModule(
-      '/src/features/studio/demos.tsx',
+    const { Demo } = await server.ssrLoadModule(
+      '/src/components/studio/demos.tsx',
     )
-    const { componentLabels } = await server.ssrLoadModule(
-      '/src/features/studio/component-labels.ts',
-    )
-    assert.deepEqual(
-      Object.keys(componentLabels).sort(),
-      [...componentNames].sort(),
+    const { componentLabels, componentNames } = await server.ssrLoadModule(
+      '/src/config/component-labels.ts',
     )
     assert.ok(
       Object.values(componentLabels).every((label) =>
@@ -23,7 +20,7 @@ test('全部 TuffUI 组件预览均可渲染且分类完整', async () => {
       ),
     )
     const { categories } = await server.ssrLoadModule(
-      '/src/features/studio/navigation.ts',
+      '/src/config/component-categories.ts',
     )
     assert.equal(componentNames.length, 86)
     assert.equal(new Set(componentNames).size, 86)
@@ -57,13 +54,13 @@ test('AvaraUI 的 28 个官方组件与统一组件目录均可用', async () =>
   const server = await createServer({ server: { middlewareMode: true } })
   try {
     const { AvaraDemo } = await server.ssrLoadModule(
-      '/src/features/studio/avara-demos.tsx',
+      '/src/components/studio/avara-demos.tsx',
     )
     const { avaraNames, avaraGroups } = await server.ssrLoadModule(
-      '/src/features/studio/avara-catalog.ts',
+      '/src/config/avara-catalog.ts',
     )
     const { allComponentNames, allComponentLabels, matchesComponent } =
-      await server.ssrLoadModule('/src/features/studio/component-registry.ts')
+      await server.ssrLoadModule('/src/config/component-registry.ts')
     assert.equal(avaraNames.length, 28)
     assert.equal(allComponentNames.length, 114)
     assert.equal(new Set(allComponentNames).size, 114)
@@ -85,6 +82,67 @@ test('AvaraUI 的 28 个官方组件与统一组件目录均可用', async () =>
         ),
         `${name} 存在英文界面文案`,
       )
+    }
+  } finally {
+    await server.close()
+  }
+})
+
+test('票券使用传入的航班字段与指标，结构化数据可覆盖顶层值', async () => {
+  const server = await createServer({ server: { middlewareMode: true } })
+  try {
+    const { SecureEnvelope } = await server.ssrLoadModule(
+      '/src/components/avara/blocks/SecureEnvelopeBlock.tsx',
+    )
+    const flight = {
+      cardDesign: 'boarding-pass',
+      flightNumber: 'MU-5101',
+      gate: 'C18',
+      boardingTime: '08:35',
+      cabinClass: '商务舱',
+      origin: 'SHA',
+      destination: 'PEK',
+      eticketNumber: '票号-12345',
+      airlineCompany: '东方航空',
+    }
+    const markup = renderToString(createElement(SecureEnvelope, flight))
+    for (const value of [
+      'MU-5101',
+      'C18',
+      '08:35',
+      '商务舱',
+      'SHA ➔ PEK',
+      '东方航空',
+    ]) {
+      assert.ok(markup.includes(value), `${value} 未显示`)
+    }
+    const override = renderToString(
+      createElement(SecureEnvelope, {
+        ...flight,
+        data: { flightNumber: 'CA-1001', flightRoute: 'CAN ➔ SZX' },
+      }),
+    )
+    assert.ok(override.includes('CA-1001'))
+    assert.ok(override.includes('CAN ➔ SZX'))
+    assert.ok(!override.includes('MU-5101'))
+    const coupon = renderToString(
+      createElement(SecureEnvelope, {
+        metrics: [
+          { label: '研究完成', value: '88%' },
+          { label: '参与人数', value: '12 人' },
+          { label: '审核状态', value: '已通过' },
+        ],
+      }),
+    )
+    for (const value of [
+      '研究完成',
+      '88%',
+      '参与人数',
+      '12 人',
+      '审核状态',
+      '已通过',
+    ]) {
+      assert.ok(coupon.includes(value), `${value} 未显示`)
     }
   } finally {
     await server.close()

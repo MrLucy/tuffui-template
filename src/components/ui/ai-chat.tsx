@@ -5,27 +5,28 @@
 import { Export, List, SidebarSimple, X } from '@phosphor-icons/react'
 import {
   AnimatePresence,
-  MotionConfig,
   motion,
+  MotionConfig,
   useReducedMotion,
 } from 'motion/react'
 import { useEffect, useId, useRef, useState } from 'react'
+
 import { IconButton } from '@/components/ui/action-button'
-import { AgentComposer } from '@/components/ui/agent-composer'
 import { Avatar } from '@/components/ui/agent-avatar'
-import { KeyCombo } from '@/components/ui/key-hint'
+import { AgentComposer } from '@/components/ui/agent-composer'
 import { ChatThread, type ThreadMessage } from '@/components/ui/chat-thread'
 import {
-  ContextWindowMeter,
   type ContextSegment,
+  ContextWindowMeter,
 } from '@/components/ui/context-window-meter'
 import {
-  ConversationList,
   type Conversation,
+  ConversationList,
 } from '@/components/ui/conversation-list'
+import { KeyCombo } from '@/components/ui/key-hint'
 import {
-  PromptSuggestions,
   type PromptSuggestion,
+  PromptSuggestions,
 } from '@/components/ui/prompt-suggestions'
 import { Tag } from '@/components/ui/status-pill'
 import { Tooltip } from '@/components/ui/tooltip-hint'

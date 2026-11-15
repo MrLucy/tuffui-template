@@ -1,7 +1,9 @@
 import assert from 'node:assert/strict'
 import { after, before, test } from 'node:test'
 
-import { createMemoryRouter } from 'react-router'
+import { createElement } from 'react'
+import { renderToString } from 'react-dom/server'
+import { createMemoryRouter, RouterProvider } from 'react-router'
 import { createServer } from 'vite'
 
 let server
@@ -37,20 +39,20 @@ after(async () => {
 })
 
 test('全部工作台页面与关于页无需登录即可直接访问', () => {
-  for (const path of [
-    '/',
-    '/agents',
-    '/chat',
-    '/evaluations',
-    '/writer',
-    '/approvals',
-    '/analytics',
-    '/projects',
-    '/creative',
-    '/components',
-    '/settings',
-    '/about?tab=info',
-    '/missing',
+  for (const [path, heading] of [
+    ['/', '让好想法，开始工作。'],
+    ['/agents', '智能体中心'],
+    ['/chat', '智能对话'],
+    ['/evaluations', '模型评测'],
+    ['/writer', '内容工作室'],
+    ['/approvals', '工具审批'],
+    ['/analytics', '数据洞察'],
+    ['/projects', '项目与订阅'],
+    ['/creative', '创意交互'],
+    ['/components', '组件实验室'],
+    ['/settings', '工作空间设置'],
+    ['/about?tab=info', '关于项目'],
+    ['/missing', '页面不存在'],
   ]) {
     const router = createMemoryRouter(routes, { initialEntries: [path] })
     try {
@@ -59,6 +61,13 @@ test('全部工作台页面与关于页无需登录即可直接访问', () => {
       assert.equal(router.state.location.pathname, expected.pathname)
       assert.equal(router.state.location.search, expected.search)
       assert.equal(router.state.errors, null)
+      const markup = renderToString(createElement(RouterProvider, { router }))
+      assert.ok(
+        markup.includes(`<h1>${heading}</h1>`) ||
+          new RegExp(`<h1[^>]*>${heading}</h1>`).test(markup),
+        `${path} 未显示对应页面内容`,
+      )
+      assert.ok(!markup.includes('Invalid Date'), `${path} 包含无效日期`)
     } finally {
       router.dispose()
     }

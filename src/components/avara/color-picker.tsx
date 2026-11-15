@@ -1,20 +1,21 @@
 // Avara UI · MIT License · Source: https://avaraui.com/r/color-picker.json
 'use client'
 
-import React, { useState, useRef, useEffect, useCallback } from 'react'
-import { cn } from '@/lib/utils'
 import {
-  Copy,
-  Check,
-  Pipette,
   ArrowLeftRight,
-  Sparkles,
-  Shuffle,
+  Check,
+  Compass,
+  Copy,
   Layers,
   Palette,
-  Compass,
+  Pipette,
+  Shuffle,
   Sliders,
+  Sparkles,
 } from 'lucide-react'
+import React, { useCallback, useEffect, useRef, useState } from 'react'
+
+import { cn } from '@/lib/utils'
 
 export type ColorFormat = 'hex' | 'rgb' | 'hsl'
 

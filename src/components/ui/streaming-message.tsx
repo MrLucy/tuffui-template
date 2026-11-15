@@ -11,8 +11,9 @@ import {
   Sparkle,
   WarningCircle,
 } from '@phosphor-icons/react'
-import { AnimatePresence, MotionConfig, motion } from 'motion/react'
+import { AnimatePresence, motion, MotionConfig } from 'motion/react'
 import { Fragment, useEffect, useState } from 'react'
+
 import { Button, IconButton } from '@/components/ui/action-button'
 import { Tooltip } from '@/components/ui/tooltip-hint'
 import { EASE_OUT } from '@/lib/motion-tokens'
@@ -373,7 +374,9 @@ function CopyAction({
       onClick={async () => {
         try {
           await navigator.clipboard.writeText(content)
-        } catch {}
+        } catch {
+          // Clipboard access can be denied; keep the local callback available.
+        }
         setCopied(true)
         onCopy?.(content)
       }}

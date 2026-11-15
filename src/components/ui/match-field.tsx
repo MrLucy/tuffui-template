@@ -2,14 +2,15 @@
 // Free to use. If it helps you, you can support it: https://ko-fi.com/yurigokoryan
 'use client'
 
-import { Briefcase, Target, type Icon } from '@phosphor-icons/react'
+import { Briefcase, type Icon, Target } from '@phosphor-icons/react'
 import {
   AnimatePresence,
-  MotionConfig,
   motion,
+  MotionConfig,
   useReducedMotion,
 } from 'motion/react'
 import { useLayoutEffect, useMemo, useRef, useState } from 'react'
+
 import { Panel, Shell, ShellHeader } from '@/components/ui/surface'
 import { EASE_OUT, enter, exit, instant } from '@/lib/motion-tokens'
 import { cn } from '@/lib/utils'

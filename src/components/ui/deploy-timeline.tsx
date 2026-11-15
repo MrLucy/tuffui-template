@@ -8,16 +8,17 @@ import {
   RocketLaunch,
 } from '@phosphor-icons/react'
 import {
-  AnimatePresence,
-  MotionConfig,
-  motion,
-  useReducedMotion,
   animate,
+  AnimatePresence,
+  motion,
+  MotionConfig,
   useMotionValue,
   useMotionValueEvent,
+  useReducedMotion,
   useSpring,
 } from 'motion/react'
 import { useEffect, useId, useLayoutEffect, useRef, useState } from 'react'
+
 import { Button } from '@/components/ui/action-button'
 import { RollingNumber } from '@/components/ui/rolling-number'
 import { Panel, Shell, ShellHeader } from '@/components/ui/surface'

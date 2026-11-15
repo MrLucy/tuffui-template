@@ -9,8 +9,9 @@ import {
   Gauge,
   Hourglass,
 } from '@phosphor-icons/react'
-import { AnimatePresence, MotionConfig, motion } from 'motion/react'
+import { AnimatePresence, motion, MotionConfig } from 'motion/react'
 import { useEffect, useState } from 'react'
+
 import { Button } from '@/components/ui/action-button'
 import { ProgressBar } from '@/components/ui/progress-bar'
 import { RollingNumber } from '@/components/ui/rolling-number'

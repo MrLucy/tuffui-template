@@ -1,4 +1,5 @@
 import { lazy, Suspense } from 'react'
+
 import { Skeleton } from '@/components/ui/loading-skeleton'
 const AvaraDemo = lazy(() => import('./avara-demos'))
 export function AvaraPreview({ name }: { name: string }) {

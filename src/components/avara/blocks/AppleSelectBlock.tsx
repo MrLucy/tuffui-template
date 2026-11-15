@@ -1,8 +1,9 @@
 // Avara UI · MIT License · Source: https://avaraui.com/r/apple-select.json
 'use client'
 
-import { cn } from '@/lib/utils'
 import React from 'react'
+
+import { cn } from '@/lib/utils'
 
 export interface AppleSelectProps extends Omit<
   React.HTMLAttributes<HTMLElement>,

@@ -1,10 +1,11 @@
 // Avara UI · MIT License · Source: https://avaraui.com/r/masonry-grid-motion.json
 'use client'
 
-import { cn } from '@/lib/utils'
-import { motion } from 'motion/react'
 import type { HTMLMotionProps, Variants } from 'motion/react'
+import { motion } from 'motion/react'
 import React from 'react'
+
+import { cn } from '@/lib/utils'
 
 // 1. FIXED TS ERROR: Extend HTMLMotionProps instead of React.HTMLAttributes
 export interface MasonryGridProps<T> extends Omit<

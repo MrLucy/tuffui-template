@@ -15,32 +15,33 @@ import {
 } from '@phosphor-icons/react'
 import {
   AnimatePresence,
-  MotionConfig,
   motion,
+  MotionConfig,
   useReducedMotion,
 } from 'motion/react'
 import { useEffect, useId, useRef, useState } from 'react'
+
 import { Button, IconButton } from '@/components/ui/action-button'
-import { AgentComposer } from '@/components/ui/agent-composer'
 import { Avatar } from '@/components/ui/agent-avatar'
+import { AgentComposer } from '@/components/ui/agent-composer'
 import { ChatThread, type ThreadMessage } from '@/components/ui/chat-thread'
 import {
-  DataTable,
   type DataColumn,
   type DataRow,
+  DataTable,
 } from '@/components/ui/data-table'
 import { Collapsible } from '@/components/ui/disclosure'
 import { EmptyState } from '@/components/ui/empty-state'
 import { KeyCombo } from '@/components/ui/key-hint'
-import { MemoryPanel, type Memory } from '@/components/ui/memory-panel'
+import { type Memory, MemoryPanel } from '@/components/ui/memory-panel'
 import {
-  PromptSuggestions,
   type PromptSuggestion,
+  PromptSuggestions,
 } from '@/components/ui/prompt-suggestions'
 import { RollingNumber } from '@/components/ui/rolling-number'
 import { Segmented } from '@/components/ui/segmented-control'
 import { StatusPill, type StatusTone } from '@/components/ui/status-pill'
-import { ToolCallBlock, type ToolCall } from '@/components/ui/tool-call-block'
+import { type ToolCall, ToolCallBlock } from '@/components/ui/tool-call-block'
 import { Tooltip } from '@/components/ui/tooltip-hint'
 import {
   EASE_OUT,

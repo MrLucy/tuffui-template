@@ -1,0 +1,49 @@
+/* Summary sizing and responsive refinements, applied after the base styles. */
+.overview-stats > section {
+  max-width: none;
+}
+
+.overview-stats > section > div > div > div {
+  padding: 0 !important;
+}
+
+.overview-stats > section > div > div > div > p {
+  font-size: 11px;
+}
+
+.overview-stats > section > div > div > div > div:last-child {
+  font-size: 10px;
+}
+
+.overview-stats > section > div > div > div > div:last-child > span {
+  font-size: 9px;
+}
+
+.studio-main {
+  position: relative;
+  overflow-x: hidden;
+}
+
+.overview-stats svg {
+  flex-shrink: 1;
+  min-width: 30px;
+}
+
+.overview-stats > section > div > div > div > div:nth-child(2) {
+  gap: 8px;
+}
+
+@media (width <= 650px) {
+  .overview-stats svg {
+    width: 48px;
+  }
+
+  .overview-stats > section > div > div > div > div:nth-child(2) > span {
+    font-size: 23px;
+  }
+
+  .overview-stats > section > div > div,
+  .overview-stats > section > div > button {
+    padding: 12px !important;
+  }
+}

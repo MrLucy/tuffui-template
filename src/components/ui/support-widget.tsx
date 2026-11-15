@@ -8,15 +8,16 @@ import {
   PaperPlaneRight,
   X,
 } from '@phosphor-icons/react'
-import { AnimatePresence, MotionConfig, motion } from 'motion/react'
+import { AnimatePresence, motion, MotionConfig } from 'motion/react'
 import { useEffect, useId, useRef, useState } from 'react'
+
 import { IconButton } from '@/components/ui/action-button'
 import { Avatar } from '@/components/ui/agent-avatar'
 import { ChatThread, type ThreadMessage } from '@/components/ui/chat-thread'
 import { Spinner, Thinking } from '@/components/ui/loader'
 import {
-  PromptSuggestions,
   type PromptSuggestion,
+  PromptSuggestions,
 } from '@/components/ui/prompt-suggestions'
 import { ResponseFeedback } from '@/components/ui/response-feedback'
 import { TextField } from '@/components/ui/text-field'

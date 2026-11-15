@@ -1,9 +1,11 @@
 // Avara UI · MIT License · Source: https://avaraui.com/r/terminal.json
 'use client'
 
-import { cn } from '@/lib/utils'
 import { Check, Copy, Terminal as TerminalIcon } from 'lucide-react'
 import React, { forwardRef, useState } from 'react'
+
+import { cn } from '@/lib/utils'
+
 import { getThemeStyles } from './terminal-theme'
 
 // ==========================================

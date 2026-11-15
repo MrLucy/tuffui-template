@@ -5,21 +5,22 @@
 import {
   CheckCircle,
   Circle,
+  type Icon,
   ListChecks,
   SidebarSimple,
   X,
-  type Icon,
 } from '@phosphor-icons/react'
 import {
   AnimatePresence,
-  MotionConfig,
   motion,
+  MotionConfig,
   useReducedMotion,
 } from 'motion/react'
 import { useEffect, useRef, useState } from 'react'
+
 import { IconButton } from '@/components/ui/action-button'
-import { AgentComposer } from '@/components/ui/agent-composer'
 import { Avatar } from '@/components/ui/agent-avatar'
+import { AgentComposer } from '@/components/ui/agent-composer'
 import { ChatThread, type ThreadMessage } from '@/components/ui/chat-thread'
 import { ProgressBar } from '@/components/ui/progress-bar'
 import { RollingNumber } from '@/components/ui/rolling-number'

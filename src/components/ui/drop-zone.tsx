@@ -3,8 +3,9 @@
 'use client'
 
 import { FileArrowUp, WarningCircle } from '@phosphor-icons/react'
-import { AnimatePresence, MotionConfig, motion } from 'motion/react'
+import { AnimatePresence, motion, MotionConfig } from 'motion/react'
 import { useId, useRef, useState } from 'react'
+
 import { Button } from '@/components/ui/action-button'
 import { EASE_OUT } from '@/lib/motion-tokens'
 import { cn } from '@/lib/utils'

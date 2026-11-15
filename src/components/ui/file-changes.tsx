@@ -3,8 +3,9 @@
 'use client'
 
 import { CaretRight, Check, Folder } from '@phosphor-icons/react'
-import { AnimatePresence, MotionConfig, motion } from 'motion/react'
-import { useMemo, useRef, useState, type KeyboardEvent } from 'react'
+import { AnimatePresence, motion, MotionConfig } from 'motion/react'
+import { type KeyboardEvent, useMemo, useRef, useState } from 'react'
+
 import { Button } from '@/components/ui/action-button'
 import { RollingNumber } from '@/components/ui/rolling-number'
 import { Segmented } from '@/components/ui/segmented-control'

@@ -10,8 +10,9 @@ import {
   Flask,
   X,
 } from '@phosphor-icons/react'
-import { AnimatePresence, MotionConfig, motion } from 'motion/react'
-import { useRef, useState, type KeyboardEvent } from 'react'
+import { AnimatePresence, motion, MotionConfig } from 'motion/react'
+import { type KeyboardEvent, useRef, useState } from 'react'
+
 import { ProgressBar } from '@/components/ui/progress-bar'
 import { RollingNumber } from '@/components/ui/rolling-number'
 import { Segmented } from '@/components/ui/segmented-control'
@@ -172,7 +173,7 @@ export function EvalResults({
       ArrowDown: COLS,
       ArrowUp: -COLS,
     }
-    let next = focus
+    let next: number
     if (e.key in moves) next = focus + moves[e.key]
     else if (e.key === 'Home') next = 0
     else if (e.key === 'End') next = cases.length - 1

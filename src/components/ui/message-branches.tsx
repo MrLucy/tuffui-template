@@ -9,14 +9,15 @@ import {
   GitBranch,
   PencilSimple,
 } from '@phosphor-icons/react'
-import { AnimatePresence, MotionConfig, motion } from 'motion/react'
+import { AnimatePresence, motion, MotionConfig } from 'motion/react'
 import {
-  useRef,
-  useState,
   type KeyboardEvent,
   type MouseEvent,
   type ReactNode,
+  useRef,
+  useState,
 } from 'react'
+
 import { IconButton } from '@/components/ui/action-button'
 import { Inset, Panel, Shell } from '@/components/ui/surface'
 import { enter, exit, spring as morph } from '@/lib/motion-tokens'

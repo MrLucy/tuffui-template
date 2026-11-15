@@ -1,19 +1,20 @@
 // Avara UI · MIT License · Source: https://avaraui.com/r/infrastructure-topology.json
 'use client'
 
-import React, { useState } from 'react'
-import { cn } from '@/lib/utils'
 import {
-  Zap,
-  UserCheck,
-  ShieldAlert,
-  Database,
+  Activity,
   Cloud,
   CreditCard,
-  Activity,
+  Database,
   Shield,
+  ShieldAlert,
+  UserCheck,
   Wifi,
+  Zap,
 } from 'lucide-react'
+import React, { useState } from 'react'
+
+import { cn } from '@/lib/utils'
 
 export interface TopologyNode {
   id: string

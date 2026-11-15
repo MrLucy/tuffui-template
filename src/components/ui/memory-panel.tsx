@@ -5,14 +5,16 @@
 import {
   ArrowUUpLeft,
   Brain,
+  MagnifyingGlass,
   PencilSimple,
   PushPin,
   Trash,
-  MagnifyingGlass,
 } from '@phosphor-icons/react'
-import { AnimatePresence, MotionConfig, motion } from 'motion/react'
+import { AnimatePresence, motion, MotionConfig } from 'motion/react'
 import { useEffect, useRef, useState } from 'react'
+
 import { Button, IconButton } from '@/components/ui/action-button'
+import { EmptyState } from '@/components/ui/empty-state'
 import { RollingNumber } from '@/components/ui/rolling-number'
 import { Segmented } from '@/components/ui/segmented-control'
 import { StatusPill } from '@/components/ui/status-pill'
@@ -20,7 +22,6 @@ import { Panel, Shell, ShellHeader } from '@/components/ui/surface'
 import { SearchField } from '@/components/ui/text-field'
 import { exit as quickExit } from '@/lib/motion-tokens'
 import { cn } from '@/lib/utils'
-import { EmptyState } from '@/components/ui/empty-state'
 
 export type MemoryScope = 'user' | 'project' | 'session'
 

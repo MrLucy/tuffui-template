@@ -1,0 +1,85 @@
+/* Fixed-width lanes pack every module immediately below the shortest lane. */
+.bento-grid,
+.bento-grid.feature-grid {
+  --bento-columns: 3;
+
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(var(--bento-columns), minmax(0, 1fr));
+  grid-auto-rows: auto;
+  gap: 10px;
+  align-items: start;
+}
+
+.bento-grid > * {
+  grid-column: auto !important;
+}
+
+.bento-grid.is-packed {
+  display: block;
+}
+
+.bento-grid.is-packed > * {
+  position: absolute;
+  top: 0;
+  left: 0;
+  grid-column: auto !important;
+  grid-row: auto !important;
+  margin: 0;
+  box-sizing: border-box;
+  will-change: auto;
+}
+
+.bento-grid > .bento-tile {
+  container-type: inline-size;
+}
+
+.bento-grid #stat-grid .component-preview > section > div {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.bento-grid .bento-shortcuts {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.bento-grid .bento-agent-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.bento-grid .bento-agent-head {
+  flex-wrap: wrap;
+}
+
+.bento-grid .tile-explore {
+  min-height: 102px;
+}
+
+@container (max-width:390px) {
+  .bento-shortcuts {
+    grid-template-columns: 1fr !important;
+  }
+
+  .bento-agent-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (width <= 1550px) {
+  .bento-grid,
+  .bento-grid.feature-grid {
+    --bento-columns: 2;
+  }
+}
+
+@media (width <= 760px) {
+  .bento-grid,
+  .bento-grid.feature-grid {
+    --bento-columns: 1;
+
+    gap: 8px;
+  }
+
+  .bento-grid > .bento-tile {
+    padding: 9px;
+  }
+}

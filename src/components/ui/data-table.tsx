@@ -7,16 +7,17 @@ import {
   CaretUp,
   Check,
   Copy,
-  SquaresFour,
   MagnifyingGlass,
+  SquaresFour,
 } from '@phosphor-icons/react'
 import { useMemo, useState } from 'react'
+
 import { Button, IconButton } from '@/components/ui/action-button'
 import { Checkbox } from '@/components/ui/choice-controls'
+import { EmptyState } from '@/components/ui/empty-state'
 import { RollingNumber } from '@/components/ui/rolling-number'
 import { Panel, Shell, ShellHeader } from '@/components/ui/surface'
 import { SearchField } from '@/components/ui/text-field'
-import { EmptyState } from '@/components/ui/empty-state'
 import { cn } from '@/lib/utils'
 export type DataRow = { id: string } & Record<string, string | number | null>
 
@@ -141,7 +142,9 @@ export function DataTable<R extends DataRow>({
       )
       setCopied(true)
       setTimeout(() => setCopied(false), 1600)
-    } catch {}
+    } catch {
+      // Clipboard access can be denied; keep the local callback available.
+    }
   }
   const valueOf = (row: R, column: DataColumn<R>) =>
     column.format

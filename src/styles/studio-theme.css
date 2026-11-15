@@ -1,0 +1,374 @@
+/* Compact black workspace; component surfaces inherit the same dark tokens. */
+.studio-app,
+.studio-main {
+  background: var(--studio-canvas);
+}
+
+.studio-sidebar {
+  background: var(--studio-sidebar);
+  padding-inline: 10px;
+}
+
+.studio-brand {
+  font-size: 22px;
+  height: 58px;
+}
+
+.studio-topbar {
+  height: 46px;
+  padding-inline: 20px;
+}
+
+.nav-item {
+  color: #a1a1a8;
+}
+
+.nav-item.active {
+  color: #a4bfff;
+  background: #20283a;
+}
+
+.nav-item:hover {
+  background: #202023;
+  color: #eeeef0;
+}
+
+.nav-item.active .nav-badge {
+  background: #2c3b58;
+  color: #a4bfff;
+}
+
+.nav-badge.amber {
+  background: #332b1d;
+  color: #e1b56f;
+}
+
+.workspace-switch {
+  background: #19191c;
+  padding: 8px;
+  gap: 7px;
+}
+
+.workspace-icon {
+  background: #252b39;
+  color: #a4bfff;
+}
+
+.sidebar-search {
+  margin-top: 10px;
+  margin-bottom: 2px;
+}
+
+.nav-group {
+  margin-top: 14px;
+}
+
+.sidebar-bottom {
+  padding-top: 12px;
+}
+
+.help-link {
+  padding-block: 12px;
+}
+
+.lab-promo {
+  background: #191b20;
+}
+
+.profile-button {
+  padding-block: 11px;
+}
+
+.page-heading h1 {
+  color: #eeeef0;
+  letter-spacing: -0.5px;
+}
+
+.page-heading p {
+  color: #9999a2;
+  margin-top: 5px;
+}
+
+.eyebrow {
+  margin-bottom: 6px;
+  color: #808995;
+}
+
+.overview-toolbar {
+  height: 33px;
+  margin-bottom: 12px;
+}
+
+.overview-stats > section > div {
+  gap: 10px !important;
+}
+
+.overview-stats > section > div > div,
+.overview-stats > section > div > button {
+  background: #131315 !important;
+  padding: 11px 13px !important;
+  border-radius: 8px !important;
+}
+
+.overview-stats > section > div > div > div {
+  gap: 6px;
+  background: transparent;
+  border-radius: 0;
+}
+
+.overview-stats > section > div > div > div > div:nth-child(2) > span {
+  font-size: 24px;
+}
+
+.race-demo {
+  background: #19191c;
+  border-radius: 12px;
+}
+
+.race-demo > section > div:nth-child(2) {
+  padding: 12px;
+  border-radius: 10px;
+}
+
+.race-demo > section > div:nth-child(2) > div:nth-child(2) {
+  margin-top: 8px;
+}
+
+.race-demo > section > div:nth-child(2) > div[role='group'] {
+  margin-top: 10px;
+}
+
+.race-demo [role='group'] .text-xs {
+  font-size: 10px;
+}
+
+.chart-section > section {
+  background: #121213;
+}
+
+.chart-section > section > div:first-child {
+  padding: 8px 10px 0;
+}
+
+.chart-section > section > div:nth-child(2) {
+  padding-top: 6px;
+}
+
+.quick-access {
+  margin-top: 0;
+  background: #14161b;
+  padding: 12px;
+}
+
+.quick-links {
+  margin-top: 10px;
+}
+
+.quick-links a {
+  background: #1c1e25;
+  border-color: #2a2d36;
+  color: #b1bfd8;
+}
+
+.small-spark,
+.explore-icon {
+  background: #242c3d;
+  color: #9cbaff;
+}
+
+.overview-right {
+  gap: 12px;
+}
+
+.section-heading {
+  margin-bottom: 9px;
+}
+
+.section-heading h2 {
+  color: #d0d0d7;
+}
+
+.activity-list {
+  background: #121213;
+}
+
+.activity-row,
+.team-row {
+  padding-block: 10px;
+}
+
+.activity-row strong,
+.team-row strong {
+  color: #c7c7cf;
+}
+
+.activity-row p,
+.team-row p {
+  color: #8b8b95;
+}
+
+.activity-icon.green {
+  background: #1d3028;
+  color: #7bc7a1;
+}
+
+.activity-icon.blue {
+  background: #1f2b40;
+  color: #8cadf2;
+}
+
+.activity-icon.orange {
+  background: #332c20;
+  color: #d2ac70;
+}
+
+.explore-strip {
+  background: #15161a;
+  padding: 12px 14px;
+}
+
+.strip-grid {
+  color: #232630;
+}
+
+.blue-button,
+.blue-button:hover {
+  color: #fff;
+}
+
+.lab-intro {
+  padding: 16px;
+  background: #151820;
+}
+
+.lab-intro-icon {
+  padding: 10px;
+  background: #242c3f;
+}
+
+.lab-intro h2 {
+  font-size: 19px;
+  color: #b4c9ee;
+}
+
+.lab-intro-pattern {
+  color: #242a38;
+}
+
+.category-tabs button.active {
+  background: #20283a;
+  border-color: #2c3a54;
+  color: #a4bfff;
+}
+
+.component-caption {
+  background: #18181b;
+  padding: 9px 11px;
+}
+
+.component-caption h2 {
+  color: #c3c3cc;
+}
+
+.component-preview {
+  padding: 9px;
+}
+
+.component-card {
+  border-radius: 10px;
+  background: #111113;
+}
+
+.feature-toolbar {
+  padding-bottom: 12px;
+  margin-bottom: 12px;
+}
+
+.feature-grid {
+  gap: 12px;
+}
+
+.artifact-preview {
+  background: #191f2a;
+  color: #afc5ed;
+  min-height: 170px;
+}
+
+.artifact-preview p {
+  color: #919fb6;
+}
+
+.command-search {
+  background: #222226;
+}
+
+.command-search input {
+  color: #e1e1e5;
+}
+
+.command-results > button:hover {
+  background: #252a35;
+  color: #b3caff;
+}
+
+.lab-search input {
+  color: #d1d1d9;
+}
+
+@media (width <= 650px) {
+  .studio-topbar {
+    padding-inline: 12px;
+  }
+
+  .studio-brand {
+    height: 58px;
+  }
+
+  .page-heading {
+    margin-bottom: 12px;
+    gap: 9px;
+  }
+
+  .page-heading h1 {
+    font-size: 23px;
+  }
+
+  .heading-actions {
+    gap: 7px;
+  }
+
+  .overview-stats > section > div {
+    gap: 8px !important;
+  }
+
+  .overview-stats > section > div > div,
+  .overview-stats > section > div > button {
+    padding: 10px !important;
+  }
+
+  .overview-stats > section > div > div > div > div:nth-child(2) > span {
+    font-size: 22px;
+  }
+
+  .overview-stats svg {
+    width: 42px;
+  }
+
+  .overview-grid,
+  .overview-lower {
+    gap: 14px;
+  }
+
+  .race-demo > section > div:nth-child(2) {
+    padding: 10px;
+  }
+}
+
+.workspace-switch small {
+  white-space: nowrap;
+  font-size: 9px;
+}
+
+.workspace-switch strong {
+  font-size: 10.5px;
+}

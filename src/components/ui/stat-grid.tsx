@@ -3,8 +3,9 @@
 'use client'
 
 import { ArrowDownRight, ArrowUpRight, Minus } from '@phosphor-icons/react'
-import { MotionConfig, motion } from 'motion/react'
+import { motion, MotionConfig } from 'motion/react'
 import { useId } from 'react'
+
 import { ProgressBar } from '@/components/ui/progress-bar'
 import { RollingNumber } from '@/components/ui/rolling-number'
 import { StatusPill } from '@/components/ui/status-pill'

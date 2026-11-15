@@ -5,8 +5,8 @@
 import { ArrowDown, Sparkle } from '@phosphor-icons/react'
 import {
   AnimatePresence,
-  MotionConfig,
   motion,
+  MotionConfig,
   useReducedMotion,
 } from 'motion/react'
 import {
@@ -17,10 +17,11 @@ import {
   useState,
   useSyncExternalStore,
 } from 'react'
+
+import { Avatar } from '@/components/ui/agent-avatar'
 import { Panel, Shell } from '@/components/ui/surface'
 import { enter, exit } from '@/lib/motion-tokens'
 import { cn } from '@/lib/utils'
-import { Avatar } from '@/components/ui/agent-avatar'
 
 export type ThreadMessage = {
   id: string

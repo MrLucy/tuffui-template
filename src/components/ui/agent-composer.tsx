@@ -3,15 +3,16 @@
 'use client'
 
 import { At, FileText, Paperclip, Repeat, X } from '@phosphor-icons/react'
-import { AnimatePresence, MotionConfig, motion } from 'motion/react'
+import { AnimatePresence, motion, MotionConfig } from 'motion/react'
 import { useId, useLayoutEffect, useRef, useState } from 'react'
+
 import { Button, IconButton } from '@/components/ui/action-button'
+import { Kbd } from '@/components/ui/key-hint'
+import { Spinner } from '@/components/ui/loader'
 import { Segmented } from '@/components/ui/segmented-control'
 import { Panel, Shell } from '@/components/ui/surface'
 import { enter, exit as leave, spring as slide } from '@/lib/motion-tokens'
 import { cn } from '@/lib/utils'
-import { Kbd } from '@/components/ui/key-hint'
-import { Spinner } from '@/components/ui/loader'
 
 export type ComposerMode = 'ask' | 'plan' | 'act'
 export type ComposerContextItem = { id: string; name: string; tokens: number }

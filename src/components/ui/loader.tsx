@@ -5,11 +5,12 @@
 import { CircleNotch } from '@phosphor-icons/react'
 import {
   AnimatePresence,
-  MotionConfig,
   motion,
+  MotionConfig,
   useReducedMotion,
 } from 'motion/react'
 import { useEffect, useState } from 'react'
+
 import { EASE_OUT } from '@/lib/motion-tokens'
 import { cn } from '@/lib/utils'
 

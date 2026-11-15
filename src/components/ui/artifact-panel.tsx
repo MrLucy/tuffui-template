@@ -13,8 +13,9 @@ import {
   FileCode,
   type Icon,
 } from '@phosphor-icons/react'
-import { AnimatePresence, MotionConfig, motion } from 'motion/react'
+import { AnimatePresence, motion, MotionConfig } from 'motion/react'
 import { useState } from 'react'
+
 import { Button, IconButton } from '@/components/ui/action-button'
 import { RollingNumber } from '@/components/ui/rolling-number'
 import { Segmented } from '@/components/ui/segmented-control'
@@ -95,7 +96,9 @@ export function ArtifactPanel({
   const copy = async () => {
     try {
       await navigator.clipboard?.writeText(version.source)
-    } catch {}
+    } catch {
+      // Clipboard access can be denied; keep the local callback available.
+    }
     onCopy?.(version.source)
     setCopied(true)
     setTimeout(() => setCopied(false), 1500)

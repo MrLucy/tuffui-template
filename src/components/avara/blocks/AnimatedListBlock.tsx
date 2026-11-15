@@ -1,8 +1,9 @@
 // Avara UI · MIT License · Source: https://avaraui.com/r/animated-list.json
 'use client'
 
-import { cn } from '@/lib/utils'
 import React, { forwardRef, useEffect, useRef } from 'react'
+
+import { cn } from '@/lib/utils'
 
 export type AnimationVariant =
   'flip' | 'slide-right' | 'slide-left' | 'slide-up' | 'pop'

@@ -1,9 +1,9 @@
+import type { BackgroundAgent } from '@/components/ui/background-agents'
 import type { ThreadMessage } from '@/components/ui/chat-thread'
-import type { ToolApprovalRequest } from '@/components/ui/tool-approval-queue'
+import type { EvalResultsProps } from '@/components/ui/eval-results'
 import type { FileChange } from '@/components/ui/file-changes'
 import type { TerminalRun } from '@/components/ui/terminal-output'
-import type { EvalResultsProps } from '@/components/ui/eval-results'
-import type { BackgroundAgent } from '@/components/ui/background-agents'
+import type { ToolApprovalRequest } from '@/components/ui/tool-approval-queue'
 export const labels = ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
 export const series = [
   {

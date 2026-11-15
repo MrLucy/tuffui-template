@@ -1,8 +1,9 @@
 // Avara UI · MIT License · Source: https://avaraui.com/r/marquee.json
 'use client'
 
-import { cn } from '@/lib/utils'
 import React, { forwardRef } from 'react'
+
+import { cn } from '@/lib/utils'
 
 // ==========================================
 // MARQUEE COMPONENT

@@ -1,9 +1,10 @@
 // Avara UI · MIT License · Source: https://avaraui.com/r/magic-bento.json
 'use client'
 
-import { cn } from '@/lib/utils'
-import React from 'react'
 import type { ReactNode } from 'react'
+import React from 'react'
+
+import { cn } from '@/lib/utils'
 
 // ==========================================
 // BENTO GRID CONTAINER

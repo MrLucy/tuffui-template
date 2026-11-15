@@ -1,7 +1,7 @@
 // Avara UI · MIT License · Source: https://avaraui.com/r/animated-timeline.json
 'use client'
 
-import React from 'react'
+import type React from 'react'
 
 const colorThemes: Record<string, Record<string, string>> = {
   primary: {

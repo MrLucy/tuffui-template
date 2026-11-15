@@ -1,11 +1,13 @@
 // Avara UI · MIT License · Source: https://avaraui.com/r/progress.json
 'use client'
 
-import { cn } from '@/lib/utils'
 import { AlertCircle, AlertTriangle, CheckCircle2 } from 'lucide-react'
 import React, { forwardRef } from 'react'
-import { getThemeStyles } from './progress-theme'
+
+import { cn } from '@/lib/utils'
+
 import { useCountUp } from './progress-hooks'
+import { getThemeStyles } from './progress-theme'
 
 // ==========================================
 // VARIANT & COLOR CONFIGURATION

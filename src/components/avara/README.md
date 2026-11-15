@@ -4,4 +4,4 @@ The 28 source blocks listed in `sources.json` are from the official [Avara UI re
 
 Motion variants are used for stacks, folders, memories, sorting and the masonry demo. They do not replace the workspace packing layout, which retains its verified shortest-column placement.
 
-UI demos live in `src/features/studio/avara-demos.tsx`. Supporting SVG assets are bundled locally. All example actions are browser-local and use simulated data.
+UI demos live in `src/components/studio/avara-demos.tsx`. Supporting SVG assets are bundled locally. All example actions are browser-local and use simulated data.

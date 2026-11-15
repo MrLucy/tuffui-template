@@ -2,6 +2,7 @@
 
 import { Check, Minus } from '@phosphor-icons/react'
 import { createContext, useContext, useRef, useState } from 'react'
+
 import { cn } from '@/lib/utils'
 
 // Controls sit slightly recessed: a soft inner shadow on the track, the box and the dot.

@@ -10,11 +10,12 @@ import {
 } from '@phosphor-icons/react'
 import {
   AnimatePresence,
-  MotionConfig,
   motion,
+  MotionConfig,
   useReducedMotion,
 } from 'motion/react'
 import { useId, useLayoutEffect, useRef, useState } from 'react'
+
 import { RollingNumber } from '@/components/ui/rolling-number'
 import { Panel, Shell, ShellHeader } from '@/components/ui/surface'
 import { EASE_IN_OUT, EASE_OUT, enter, exit } from '@/lib/motion-tokens'

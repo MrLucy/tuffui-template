@@ -12,11 +12,12 @@ import {
 } from '@phosphor-icons/react'
 import {
   AnimatePresence,
-  MotionConfig,
   motion,
+  MotionConfig,
   useReducedMotion,
 } from 'motion/react'
-import { useEffect, useState, type MouseEvent, type ReactNode } from 'react'
+import { type MouseEvent, type ReactNode, useEffect, useState } from 'react'
+
 import { Button } from '@/components/ui/action-button'
 import { Panel, Shell } from '@/components/ui/surface'
 import { TextArea } from '@/components/ui/text-field'

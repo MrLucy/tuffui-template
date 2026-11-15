@@ -1,8 +1,9 @@
 // Avara UI · MIT License · Source: https://avaraui.com/r/qr-code-generator.json
 'use client'
 
-import React from 'react'
 import { QRCodeSVG } from 'qrcode.react'
+import React from 'react'
+
 import { cn } from '@/lib/utils'
 
 export interface QrCodeGeneratorProps extends React.HTMLAttributes<HTMLDivElement> {

@@ -2,12 +2,13 @@
 'use client'
 
 import React, { useRef, useState } from 'react'
-import { cn } from '@/lib/utils'
+
 import {
   accentStyle,
   isDefaultAccent,
   resolveAccent,
 } from '@/components/avara/lib/accent'
+import { cn } from '@/lib/utils'
 
 // ============================================================================
 // CLASSIFIED SECURITY CREST SEAL SVG
@@ -1470,14 +1471,21 @@ export function ConfidentialFolder({
     passengerName ??
     (isBoardingPass ? 'Alexander V. Wright' : 'Barbara M. Sandoval')
   const resolvedRouteText = activeData?.routeText ?? routeText
+  const originCode = activeData?.origin ?? origin
+  const destinationCode = activeData?.destination ?? destination
   const resolvedFlightRoute =
     activeData?.flightRoute ??
+    flightRoute ??
+    (originCode && destinationCode
+      ? `${originCode} ➔ ${destinationCode}`
+      : undefined) ??
     activeData?.routeText ??
     (isBoardingPass ? 'JFK ➔ LHR' : routeText)
   const resolvedDate = activeData?.date ?? date
   const resolvedDepartureTime = activeData?.departureTime ?? departureTime
   const resolvedBoardingTime =
     activeData?.boardingTime ??
+    boardingTime ??
     activeData?.departureTime ??
     (isBoardingPass ? '10:45 AM' : departureTime)
   const resolvedSeatNumber =
@@ -1485,13 +1493,19 @@ export function ConfidentialFolder({
   const resolvedTrainNumber = activeData?.trainNumber ?? trainNumber
   const resolvedFlightNumber =
     activeData?.flightNumber ??
+    flightNumber ??
     activeData?.trainNumber ??
     (isBoardingPass ? 'SA-892' : '6')
-  const resolvedGate = activeData?.gate ?? (isBoardingPass ? 'G-14' : '1')
-  const resolvedCabinClass = activeData?.cabinClass ?? 'FIRST CLASS'
+  const resolvedGate =
+    activeData?.gate ?? gate ?? (isBoardingPass ? 'G-14' : '1')
+  const resolvedCabinClass =
+    activeData?.cabinClass ?? cabinClass ?? 'FIRST CLASS'
   const resolvedTrainCompany = activeData?.trainCompany ?? trainCompany
   const resolvedAirlineCompany =
-    activeData?.airlineCompany ?? activeData?.trainCompany ?? 'SKYLINE AIRWAYS'
+    activeData?.airlineCompany ??
+    airlineCompany ??
+    activeData?.trainCompany ??
+    'SKYLINE AIRWAYS'
   const resolvedSlogan =
     activeData?.slogan ??
     slogan ??
@@ -1499,7 +1513,11 @@ export function ConfidentialFolder({
       ? 'THE ART OF LUXURY SKY TRAVEL • WORLDWIDE ALLIANCE'
       : 'UNLEASH THE POWER OF SPEED WITH HYPERBOLT EXPRESS')
   const resolvedBarcodeNumber =
-    activeData?.barcodeNumber ?? barcodeNumber ?? '0 734664 235788'
+    activeData?.eticketNumber ??
+    eticketNumber ??
+    activeData?.barcodeNumber ??
+    barcodeNumber ??
+    '0 734664 235788'
   const resolvedWebsiteUrl =
     activeData?.websiteUrl ??
     websiteUrl ??
@@ -1625,35 +1643,41 @@ export function ConfidentialFolder({
     'PRO MEMBERSHIP'
   const m1L =
     activeData?.metrics?.[0]?.label ??
+    metrics?.[0]?.label ??
     activeData?.metric1Label ??
     metric1Label ??
     pillar1Title ??
     'DISCOUNT'
   const m1V =
     activeData?.metrics?.[0]?.value ??
+    metrics?.[0]?.value ??
     activeData?.metric1Value ??
     metric1Value ??
     pillar1Desc ??
     '50% OFF'
   const m2L =
     activeData?.metrics?.[1]?.label ??
+    metrics?.[1]?.label ??
     activeData?.metric2Label ??
     metric2Label ??
     pillar2Title ??
     'TIER'
   const m2V =
     activeData?.metrics?.[1]?.value ??
+    metrics?.[1]?.value ??
     activeData?.metric2Value ??
     metric2Value ??
     pillar2Desc ??
     'VIP Elite'
   const m3L =
     activeData?.metrics?.[2]?.label ??
+    metrics?.[2]?.label ??
     activeData?.metric3Label ??
     metric3Label ??
     '状态'
   const m3V =
     activeData?.metrics?.[2]?.value ??
+    metrics?.[2]?.value ??
     activeData?.metric3Value ??
     metric3Value ??
     '已归档'

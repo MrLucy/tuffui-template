@@ -7,21 +7,22 @@ import {
   CheckCircle,
   Copy,
   FileText,
+  type Icon,
   Microphone,
   Plus,
   Sparkle,
   Stop,
   X,
-  type Icon,
 } from '@phosphor-icons/react'
 import {
   AnimatePresence,
-  MotionConfig,
   motion,
+  MotionConfig,
   useReducedMotion,
 } from 'motion/react'
 import { Select as SelectPrimitive } from 'radix-ui'
 import { useEffect, useId, useLayoutEffect, useRef, useState } from 'react'
+
 import { Kbd, KeyCombo } from '@/components/ui/key-hint'
 import { RollingNumber } from '@/components/ui/rolling-number'
 import { Panel, Shell } from '@/components/ui/surface'

@@ -1,5 +1,5 @@
-import { useLayoutEffect, useRef } from 'react'
 import type { ReactNode } from 'react'
+import { useLayoutEffect, useRef } from 'react'
 
 /** Equal-width lanes prevent the holes caused by mixed column spans. */
 export function BentoGrid({

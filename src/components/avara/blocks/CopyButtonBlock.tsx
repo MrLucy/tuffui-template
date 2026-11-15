@@ -1,9 +1,11 @@
 // Avara UI · MIT License · Source: https://avaraui.com/r/copy-button.json
 'use client'
 
-import { cn } from '@/lib/utils'
 import { Check, Copy, X } from 'lucide-react'
 import React, { forwardRef, useState } from 'react'
+
+import { cn } from '@/lib/utils'
+
 import { useCopyToClipboard } from './copy-button-hooks'
 
 export type { CopyStatus } from './copy-button-hooks'

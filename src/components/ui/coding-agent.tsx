@@ -3,8 +3,9 @@
 'use client'
 
 import { Code, GitBranch, SidebarSimple } from '@phosphor-icons/react'
-import { MotionConfig, motion } from 'motion/react'
+import { motion, MotionConfig } from 'motion/react'
 import { useEffect, useRef, useState } from 'react'
+
 import { IconButton } from '@/components/ui/action-button'
 import { Avatar } from '@/components/ui/agent-avatar'
 import {
@@ -15,12 +16,12 @@ import {
 import { AgentStatus, type AgentStatusData } from '@/components/ui/agent-status'
 import { ChatThread, type ThreadMessage } from '@/components/ui/chat-thread'
 import {
-  CheckpointTimeline,
   type Checkpoint,
+  CheckpointTimeline,
 } from '@/components/ui/checkpoint-timeline'
 import {
-  FileChanges,
   type FileChange,
+  FileChanges,
   type HunkSelection,
 } from '@/components/ui/file-changes'
 import { Segmented } from '@/components/ui/segmented-control'

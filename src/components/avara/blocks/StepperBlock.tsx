@@ -1,9 +1,10 @@
 // Avara UI · MIT License · Source: https://avaraui.com/r/stepper.json
 'use client'
 
-import { cn } from '@/lib/utils'
 import { Check } from 'lucide-react'
 import React, { useEffect, useRef } from 'react'
+
+import { cn } from '@/lib/utils'
 
 // ==========================================
 // TYPES & INTERFACES

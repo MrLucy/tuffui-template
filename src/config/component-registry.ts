@@ -1,10 +1,7 @@
-import { componentLabels } from './component-labels'
 import { avaraLabels, avaraNames } from './avara-catalog'
+import { componentLabels, componentNames } from './component-labels'
 export const allComponentLabels = { ...componentLabels, ...avaraLabels }
-export const allComponentNames = [
-  ...Object.keys(componentLabels),
-  ...avaraNames,
-]
+export const allComponentNames = [...componentNames, ...avaraNames]
 export function matchesComponent(name: string, query: string) {
   return `${allComponentLabels[name]} ${name} ${componentLibrary(name)}`
     .toLowerCase()

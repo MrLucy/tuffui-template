@@ -12,8 +12,9 @@ import {
   WarningCircle,
   X,
 } from '@phosphor-icons/react'
-import { AnimatePresence, MotionConfig, motion } from 'motion/react'
+import { AnimatePresence, motion, MotionConfig } from 'motion/react'
 import { useEffect, useRef, useState } from 'react'
+
 import { IconButton } from '@/components/ui/action-button'
 import { ProgressBar } from '@/components/ui/progress-bar'
 import { enter, exit, spring } from '@/lib/motion-tokens'
@@ -145,7 +146,6 @@ function ImageTile({
       aria-label={`打开${a.name}`}
       className="relative block size-20 overflow-hidden rounded-2xl bg-foreground/[0.06] transition-[scale] duration-150 ease-out active:scale-[0.97]"
     >
-      {/* eslint-disable-next-line @next/next/no-img-element -- user-provided URLs, no optimizer */}
       <img
         src={a.src}
         alt={a.alt ?? a.name}
@@ -296,7 +296,6 @@ function Lightbox({
             onClick={(e) => e.stopPropagation()}
             className="relative flex max-h-full max-w-3xl flex-col gap-2 rounded-[1.375rem] bg-surface p-1.5"
           >
-            {/* eslint-disable-next-line @next/next/no-img-element -- user-provided URLs */}
             <img
               src={attachment.src}
               alt={attachment.alt ?? attachment.name}

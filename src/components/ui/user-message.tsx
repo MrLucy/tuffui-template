@@ -11,13 +11,14 @@ import {
   PencilSimple,
   WarningCircle,
 } from '@phosphor-icons/react'
-import { AnimatePresence, MotionConfig, motion } from 'motion/react'
+import { AnimatePresence, motion, MotionConfig } from 'motion/react'
 import { useEffect, useRef, useState } from 'react'
+
 import { Button, IconButton } from '@/components/ui/action-button'
+import { Spinner } from '@/components/ui/loader'
 import { TextArea } from '@/components/ui/text-field'
 import { enter, exit } from '@/lib/motion-tokens'
 import { cn } from '@/lib/utils'
-import { Spinner } from '@/components/ui/loader'
 
 export type UserMessageAttachment = {
   id: string
@@ -117,7 +118,6 @@ export function UserMessage({
               >
                 <span className="flex size-8 shrink-0 items-center justify-center overflow-hidden rounded-lg bg-foreground/[0.06] text-muted-foreground">
                   {file.previewUrl ? (
-                    // eslint-disable-next-line @next/next/no-img-element
                     <img
                       src={file.previewUrl}
                       alt=""

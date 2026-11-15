@@ -3,8 +3,9 @@
 'use client'
 
 import { ChartPolar } from '@phosphor-icons/react'
-import { MotionConfig, motion, useReducedMotion } from 'motion/react'
+import { motion, MotionConfig, useReducedMotion } from 'motion/react'
 import { useState } from 'react'
+
 import { Panel, Shell, ShellHeader } from '@/components/ui/surface'
 import { EASE_OUT } from '@/lib/motion-tokens'
 import { cn } from '@/lib/utils'

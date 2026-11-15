@@ -3,8 +3,9 @@
 'use client'
 
 import { Check, Stop, StopCircle, Warning } from '@phosphor-icons/react'
-import { AnimatePresence, MotionConfig, motion } from 'motion/react'
+import { AnimatePresence, motion, MotionConfig } from 'motion/react'
 import { useEffect, useState } from 'react'
+
 import { Button } from '@/components/ui/action-button'
 import { RollingNumber } from '@/components/ui/rolling-number'
 import { Panel, Shell } from '@/components/ui/surface'

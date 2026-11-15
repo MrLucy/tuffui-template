@@ -5,11 +5,12 @@
 import { CalendarBlank, CaretLeft, CaretRight } from '@phosphor-icons/react'
 import {
   AnimatePresence,
-  MotionConfig,
   motion,
+  MotionConfig,
   useReducedMotion,
 } from 'motion/react'
 import { useEffect, useId, useRef, useState, useSyncExternalStore } from 'react'
+
 import { IconButton } from '@/components/ui/action-button'
 import { Popover } from '@/components/ui/popover-panel'
 import { EASE_OUT, instant } from '@/lib/motion-tokens'

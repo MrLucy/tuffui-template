@@ -2,7 +2,9 @@
 'use client'
 
 import React from 'react'
+
 import { cn } from '@/lib/utils'
+
 import { springLinear } from './motion-curves'
 
 export interface TextAnimationProps extends React.HTMLAttributes<HTMLDivElement> {

@@ -86,7 +86,6 @@ export function Avatar({
       className={cn('relative inline-flex shrink-0', s.box, className)}
     >
       {src ? (
-        // eslint-disable-next-line @next/next/no-img-element -- plain img keeps the primitive framework-agnostic
         <img src={src} alt="" className={cn('size-full object-cover', shape)} />
       ) : (
         <span

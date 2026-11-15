@@ -6,30 +6,31 @@ import {
   ChartBar,
   Flask,
   GearSix,
+  type Icon,
   List,
   Pulse,
   Robot,
   SidebarSimple,
   WarningCircle,
   X,
-  type Icon,
 } from '@phosphor-icons/react'
 import {
   AnimatePresence,
-  MotionConfig,
   motion,
+  MotionConfig,
   useReducedMotion,
 } from 'motion/react'
 import { useEffect, useRef, useState } from 'react'
+
 import { Button, IconButton } from '@/components/ui/action-button'
 import { Avatar, type AvatarStatus } from '@/components/ui/agent-avatar'
 import {
-  BackgroundAgents,
   type BackgroundAgent,
+  BackgroundAgents,
 } from '@/components/ui/background-agents'
 import {
-  ContextWindowMeter,
   type ContextSegment,
+  ContextWindowMeter,
 } from '@/components/ui/context-window-meter'
 import {
   EvalResults,
@@ -37,7 +38,7 @@ import {
 } from '@/components/ui/eval-results'
 import { RateLimits, type RateLimitsProps } from '@/components/ui/rate-limits'
 import { RunTrace, type TraceSpan } from '@/components/ui/run-trace'
-import { StatGrid, type Stat } from '@/components/ui/stat-grid'
+import { type Stat, StatGrid } from '@/components/ui/stat-grid'
 import { StatusPill, Tag } from '@/components/ui/status-pill'
 import { Toaster } from '@/components/ui/toast-stack'
 import {

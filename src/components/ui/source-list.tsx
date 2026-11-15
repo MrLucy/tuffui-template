@@ -3,8 +3,9 @@
 'use client'
 
 import { ArrowUpRight, BookOpenText } from '@phosphor-icons/react'
-import { MotionConfig, motion } from 'motion/react'
+import { motion, MotionConfig } from 'motion/react'
 import { Fragment, useEffect, useRef, useState } from 'react'
+
 import { Tag } from '@/components/ui/status-pill'
 import { Panel, Shell, ShellHeader } from '@/components/ui/surface'
 import { Tooltip } from '@/components/ui/tooltip-hint'

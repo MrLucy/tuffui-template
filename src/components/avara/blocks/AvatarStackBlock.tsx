@@ -1,31 +1,33 @@
 // Avara UI · MIT License · Source: https://avaraui.com/r/avatar-stack.json
 'use client'
 
+import { Plus } from 'lucide-react'
+import { Avatar as AvatarPrimitive } from 'radix-ui'
 import React, {
-  useState,
-  useRef,
+  useCallback,
   useEffect,
   useLayoutEffect,
-  useCallback,
   useMemo,
+  useRef,
+  useState,
+  useSyncExternalStore,
 } from 'react'
 import { createPortal } from 'react-dom'
-import { Plus } from 'lucide-react'
-import { cn } from '@/lib/utils'
-import {
-  prefersReducedMotion,
-  springTiming,
-  usePrefersReducedMotion,
-  type SpringOptions,
-  type Timing,
-} from '@/components/avara/lib/animate'
-import { Avatar as AvatarPrimitive } from 'radix-ui'
+
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
 } from '@/components/avara/blocks/TooltipBlock'
-export { AvatarImage, AvatarFallback } from '@/components/avara/ui/avatar'
+import {
+  prefersReducedMotion,
+  type SpringOptions,
+  springTiming,
+  type Timing,
+  usePrefersReducedMotion,
+} from '@/components/avara/lib/animate'
+import { cn } from '@/lib/utils'
+export { AvatarFallback, AvatarImage } from '@/components/avara/ui/avatar'
 
 // ==========================================
 // AVATAR STACK & AVATAR GROUP
@@ -140,10 +142,23 @@ export interface AvatarGroupTooltipProps {
 /**
  * Marker component placed inside an Avatar to declare its hover tooltip content and designation.
  */
-export function AvatarGroupTooltip(_props: AvatarGroupTooltipProps) {
-  return null
-}
+export const AvatarGroupTooltip: React.FC<AvatarGroupTooltipProps> = () => null
 AvatarGroupTooltip.displayName = 'AvatarGroupTooltip'
+
+function isTooltipMarker(
+  node: React.ReactNode,
+): node is React.ReactElement<AvatarGroupTooltipProps> {
+  return (
+    React.isValidElement<AvatarGroupTooltipProps>(node) &&
+    (node.type === AvatarGroupTooltip ||
+      (typeof node.type !== 'string' &&
+        'displayName' in node.type &&
+        node.type.displayName === 'AvatarGroupTooltip'))
+  )
+}
+
+// Hydration supplies the client snapshot without scheduling an effect update.
+const subscribeToHydration = () => () => {}
 
 export interface AvatarGroupTooltipArrowProps extends React.HTMLAttributes<HTMLSpanElement> {
   tipRadius?: number
@@ -218,19 +233,29 @@ function FloatingTooltip({
   const [present, setPresent] = useState(false)
   if (tip && !present) setPresent(true)
 
-  const last = useRef<{
+  const [shown, setShown] = useState<{
     tip: TooltipItemData
     tipKey: number | null
     x: number
     y: number
   } | null>(null)
-  if (tip && coords) last.current = { tip, tipKey, x: coords.x, y: coords.y }
+  // Retain the last visible content as state so the exit animation can render it.
+  if (
+    tip &&
+    coords &&
+    (shown?.tip !== tip ||
+      shown.tipKey !== tipKey ||
+      shown.x !== coords.x ||
+      shown.y !== coords.y)
+  ) {
+    setShown({ tip, tipKey, x: coords.x, y: coords.y })
+  }
 
   const ref = useRef<HTMLDivElement>(null)
   const running = useRef<Animation | null>(null)
   const open = Boolean(tip)
-  const x = last.current?.x
-  const y = last.current?.y
+  const x = shown?.x
+  const y = shown?.y
 
   useLayoutEffect(() => {
     const el = ref.current
@@ -260,7 +285,6 @@ function FloatingTooltip({
     }
   }, [open, x, y, timing])
 
-  const shown = last.current
   if (!present || !shown) return null
 
   return (
@@ -362,7 +386,11 @@ export const AvatarGroup = React.forwardRef<HTMLDivElement, AvatarGroupProps>(
     const [activeIndex, setActiveIndex] = useState<number | null>(null)
     const [coords, setCoords] = useState<{ x: number; y: number } | null>(null)
     const [computedTheme, setComputedTheme] = useState<React.CSSProperties>({})
-    const [mounted, setMounted] = useState(false)
+    const mounted = useSyncExternalStore(
+      subscribeToHydration,
+      () => true,
+      () => false,
+    )
     const itemRefs = useRef<(HTMLDivElement | null)[]>([])
     const reduceMotion = usePrefersReducedMotion()
     const shift = useMemo(() => timingOf(transition), [transition])
@@ -371,10 +399,6 @@ export const AvatarGroup = React.forwardRef<HTMLDivElement, AvatarGroupProps>(
       [tooltipTransition],
     )
     const lift = typeof translate === 'number' ? `${translate}px` : translate
-
-    useEffect(() => {
-      setMounted(true)
-    }, [])
 
     const childArray = React.Children.toArray(children)
     const count = childArray.length
@@ -440,40 +464,30 @@ export const AvatarGroup = React.forwardRef<HTMLDivElement, AvatarGroupProps>(
           {...props}
         >
           {childArray.map((child, index) => {
-            if (!React.isValidElement(child)) return child
+            if (!React.isValidElement<{ children?: React.ReactNode }>(child))
+              return child
 
             let tooltipNode: React.ReactNode = null
             let designationNode: React.ReactNode = null
-            const childChildren = (child.props as any)?.children
+            const childChildren = child.props.children
             let remainingChildren: React.ReactNode = childChildren
 
             if (Array.isArray(childChildren)) {
               const nextArr: React.ReactNode[] = []
               React.Children.forEach(childChildren, (nested) => {
-                if (
-                  React.isValidElement(nested) &&
-                  (nested.type === AvatarGroupTooltip ||
-                    (nested.type as any)?.displayName === 'AvatarGroupTooltip')
-                ) {
-                  tooltipNode = (nested.props as any)?.children
+                if (isTooltipMarker(nested)) {
+                  tooltipNode = nested.props.children
                   designationNode =
-                    (nested.props as any)?.designation ||
-                    (nested.props as any)?.role
+                    nested.props.designation || nested.props.role
                 } else {
                   nextArr.push(nested)
                 }
               })
               remainingChildren = nextArr
-            } else if (
-              React.isValidElement(childChildren) &&
-              (childChildren.type === AvatarGroupTooltip ||
-                (childChildren.type as any)?.displayName ===
-                  'AvatarGroupTooltip')
-            ) {
-              tooltipNode = (childChildren.props as any)?.children
+            } else if (isTooltipMarker(childChildren)) {
+              tooltipNode = childChildren.props.children
               designationNode =
-                (childChildren.props as any)?.designation ||
-                (childChildren.props as any)?.role
+                childChildren.props.designation || childChildren.props.role
               remainingChildren = null
             }
 
@@ -482,7 +496,6 @@ export const AvatarGroup = React.forwardRef<HTMLDivElement, AvatarGroupProps>(
               : null
 
             const cleanChild = React.cloneElement(child, {
-              ...(child.props as any),
               children: remainingChildren,
             })
 
@@ -639,7 +652,9 @@ export const AvatarStack = React.forwardRef<HTMLDivElement, AvatarStackProps>(
       onMoreClick?.(rest, hiddenAvatars, e)
     }
 
-    const isCustomActionElement = React.isValidElement(action)
+    const isCustomActionElement = React.isValidElement<{
+      'aria-label'?: string
+    }>(action)
     const hasAction = Boolean(action)
 
     const isActionConfigObject =
@@ -660,9 +675,7 @@ export const AvatarStack = React.forwardRef<HTMLDivElement, AvatarStackProps>(
           : undefined
 
     const resolvedActionLabel = isCustomActionElement
-      ? ((((action as React.ReactElement).props as Record<string, any>)?.[
-          'aria-label'
-        ] as string) ?? 'Join the community')
+      ? (action.props['aria-label'] ?? 'Join the community')
       : isActionConfigObject
         ? ((action as { label?: string }).label ?? 'Join the community')
         : 'Join the community'

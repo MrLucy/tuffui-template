@@ -5,22 +5,23 @@
 import {
   CaretUpDown,
   Check,
+  type Icon,
   Minus,
   Plus,
   Scales,
   Sparkle,
-  type Icon,
 } from '@phosphor-icons/react'
 import {
   AnimatePresence,
-  MotionConfig,
   motion,
+  MotionConfig,
   useReducedMotion,
 } from 'motion/react'
 import { Select as SelectPrimitive } from 'radix-ui'
 import { useId, useRef, useState } from 'react'
-import { Switch } from '@/components/ui/choice-controls'
+
 import { Button } from '@/components/ui/action-button'
+import { Switch } from '@/components/ui/choice-controls'
 import { RollingNumber } from '@/components/ui/rolling-number'
 import { StatusPill } from '@/components/ui/status-pill'
 import { Panel, Shell, ShellHeader } from '@/components/ui/surface'

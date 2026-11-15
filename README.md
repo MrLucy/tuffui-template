@@ -80,15 +80,20 @@ npm test         # 公开路由与全部组件预览测试
 
 ```text
 src/
-  features/studio/   # 功能页面、组件演示、目录与紧凑布局
   components/ui/    # TuffUI 与基础 UI 组件
+  components/studio/ # 共享演示组件、标题、卡片、导出和紧凑布局
+  config/           # 路由导航、组件标签、分类与目录
+  data/             # 本地演示数据
+  styles/           # 工作台、Bento 与 AvaraUI 整合样式
   components/avara/ # AvaraUI 组件、来源记录与许可说明
   layouts/          # 侧边栏、顶栏与页面容器
   router/           # 公开路由配置
-  pages/            # 关于页与 404 页面
+  pages/            # 按路由拆分的页面目录，每个目录以 index.tsx 为入口
   lib/              # 通用工具
 docs/images/        # README 展示截图（选自 artifacts/）
 ```
+
+每个路由直接引用 `pages/` 中对应的页面，例如 `/agents` 对应 `src/pages/agents/index.tsx`，`/projects` 对应 `src/pages/projects/index.tsx`，首页对应 `src/pages/home/index.tsx`。每个页面在自己的目录中独立编写 JSX 布局、筛选状态和交互逻辑；`components/studio/` 只复用标题、卡片、网格与导出按钮等组件，不提供统一的整页模板。
 
 ## 组件来源
 

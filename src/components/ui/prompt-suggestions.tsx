@@ -3,7 +3,8 @@
 'use client'
 
 import { ArrowClockwise, ArrowUpRight, type Icon } from '@phosphor-icons/react'
-import { AnimatePresence, MotionConfig, motion } from 'motion/react'
+import { AnimatePresence, motion, MotionConfig } from 'motion/react'
+
 import { IconButton } from '@/components/ui/action-button'
 import { IconTile } from '@/components/ui/surface'
 import { EASE_OUT, exit } from '@/lib/motion-tokens'

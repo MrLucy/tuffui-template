@@ -1,6 +1,7 @@
 'use client'
 
 import { useReducedMotion } from 'motion/react'
+
 import { cn } from '@/lib/utils'
 
 export type RollingNumberProps = {

@@ -5,11 +5,12 @@
 import { CaretDown, type Icon } from '@phosphor-icons/react'
 import {
   AnimatePresence,
-  MotionConfig,
   motion,
+  MotionConfig,
   useReducedMotion,
 } from 'motion/react'
 import { useId, useState } from 'react'
+
 import { EASE_OUT, spring } from '@/lib/motion-tokens'
 import { cn } from '@/lib/utils'
 

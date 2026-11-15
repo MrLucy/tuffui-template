@@ -13,10 +13,11 @@ import {
 import {
   AnimatePresence,
   LayoutGroup,
-  MotionConfig,
   motion,
+  MotionConfig,
 } from 'motion/react'
-import { useEffect, useId, useRef, useState, type KeyboardEvent } from 'react'
+import { type KeyboardEvent, useEffect, useId, useRef, useState } from 'react'
+
 import { Button } from '@/components/ui/action-button'
 import { StatusPill } from '@/components/ui/status-pill'
 import { IconTile, Shell } from '@/components/ui/surface'

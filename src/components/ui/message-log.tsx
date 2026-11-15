@@ -13,7 +13,7 @@ import {
   X,
   XCircle,
 } from '@phosphor-icons/react'
-import { AnimatePresence, MotionConfig, motion } from 'motion/react'
+import { AnimatePresence, motion, MotionConfig } from 'motion/react'
 import {
   useEffect,
   useId,
@@ -22,6 +22,7 @@ import {
   useRef,
   useState,
 } from 'react'
+
 import { Button, IconButton } from '@/components/ui/action-button'
 import { CodeBlock, type CodeLanguage } from '@/components/ui/code-block'
 import { EmptyState } from '@/components/ui/empty-state'
@@ -1152,7 +1153,9 @@ function Detail({
   const write = async (text: string) => {
     try {
       await navigator.clipboard.writeText(text)
-    } catch {}
+    } catch {
+      // Clipboard access can be denied; keep the local callback available.
+    }
   }
 
   return (

@@ -12,6 +12,7 @@ import {
 } from '@phosphor-icons/react'
 import { MotionConfig } from 'motion/react'
 import { Fragment, useEffect, useMemo, useRef, useState } from 'react'
+
 import { IconButton } from '@/components/ui/action-button'
 import { CodeBlock } from '@/components/ui/code-block'
 import { Panel, Shell, ShellHeader } from '@/components/ui/surface'
@@ -170,7 +171,9 @@ export function JsonViewer({
   const copy = async (kind: 'path' | 'value', text: string, id: string) => {
     try {
       await navigator.clipboard.writeText(text)
-    } catch {}
+    } catch {
+      // Clipboard access can be denied; keep the local callback available.
+    }
     onCopy?.(kind, text)
     setCopied(id)
     clearTimeout(timer.current)

@@ -5,11 +5,12 @@
 import { WebhooksLogo } from '@phosphor-icons/react'
 import {
   AnimatePresence,
-  MotionConfig,
   motion,
+  MotionConfig,
   useReducedMotion,
 } from 'motion/react'
 import { useEffect, useId, useLayoutEffect, useRef, useState } from 'react'
+
 import { RollingNumber } from '@/components/ui/rolling-number'
 import { Segmented } from '@/components/ui/segmented-control'
 import { Panel, Shell, ShellHeader } from '@/components/ui/surface'

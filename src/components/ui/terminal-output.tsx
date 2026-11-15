@@ -14,11 +14,12 @@ import {
 } from '@phosphor-icons/react'
 import {
   AnimatePresence,
-  MotionConfig,
   motion,
+  MotionConfig,
   useReducedMotion,
 } from 'motion/react'
 import { useEffect, useLayoutEffect, useRef, useState } from 'react'
+
 import { Button } from '@/components/ui/action-button'
 import { RollingNumber } from '@/components/ui/rolling-number'
 import { StatusPill } from '@/components/ui/status-pill'

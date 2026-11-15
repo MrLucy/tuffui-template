@@ -1,7 +1,8 @@
 'use client'
 
-import { MotionConfig, motion } from 'motion/react'
+import { motion, MotionConfig } from 'motion/react'
 import { useId, useRef, useState } from 'react'
+
 import { spring } from '@/lib/motion-tokens'
 import { cn } from '@/lib/utils'
 

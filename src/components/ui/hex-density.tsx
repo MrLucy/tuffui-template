@@ -5,11 +5,12 @@
 import { Hexagon } from '@phosphor-icons/react'
 import {
   AnimatePresence,
-  MotionConfig,
   motion,
+  MotionConfig,
   useReducedMotion,
 } from 'motion/react'
 import { useLayoutEffect, useRef, useState } from 'react'
+
 import { Panel, Shell, ShellHeader } from '@/components/ui/surface'
 import { EASE_OUT, enter, exit } from '@/lib/motion-tokens'
 import { cn } from '@/lib/utils'

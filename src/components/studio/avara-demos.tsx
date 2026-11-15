@@ -1,5 +1,3 @@
-import { useState } from 'react'
-import type { ReactNode } from 'react'
 import {
   Activity,
   Bot,
@@ -16,59 +14,62 @@ import {
   Sparkles,
   WandSparkles,
 } from 'lucide-react'
-import { CardStack } from '@/components/avara/blocks/motion/CardStackBlock'
-import {
-  DraggableCardList,
-  type DraggableCardItem,
-} from '@/components/avara/motion/draggable-card-list'
-import { Folder } from '@/components/avara/blocks/motion/FolderBlock'
-import { MemoriesCard } from '@/components/avara/blocks/motion/MemoriesCardBlock'
-import {
-  MagicBento,
-  MagicBentoCard,
-} from '@/components/avara/blocks/MagicBentoBlock'
+import type { ReactNode } from 'react'
+import { useState } from 'react'
+
 import {
   AnimatedList,
   AnimatedListItem,
 } from '@/components/avara/blocks/AnimatedListBlock'
 import { AnimatedTimelineBlock } from '@/components/avara/blocks/AnimatedTimelineBlock'
-import {
-  Flowchart,
-  FlowNode,
-  FlowCanvas,
-  FlowConnection,
-} from '@/components/avara/blocks/FlowchartBlock'
-import { InfrastructureTopology } from '@/components/avara/infrastructure-topology'
-import { NetworkGraph } from '@/components/avara/blocks/NetworkGraphBlock'
+import { AppleSelect } from '@/components/avara/blocks/AppleSelectBlock'
 import { AvatarStack } from '@/components/avara/blocks/AvatarStackBlock'
+import { BookingCard } from '@/components/avara/blocks/BookingCardBlock'
+import { ConversationTimeline } from '@/components/avara/blocks/ConversationTimelineBlock'
 import {
   CopyButton,
   CopyField,
 } from '@/components/avara/blocks/CopyButtonBlock'
-import { HalfStars } from '@/components/avara/blocks/HalfStarsBlock'
-import { Stepper, StepperContent } from '@/components/avara/blocks/StepperBlock'
-import { BookingCard } from '@/components/avara/blocks/BookingCardBlock'
 import {
-  Progress,
-  ProgressField,
+  FlowCanvas,
+  Flowchart,
+  FlowConnection,
+  FlowNode,
+} from '@/components/avara/blocks/FlowchartBlock'
+import { HalfStars } from '@/components/avara/blocks/HalfStarsBlock'
+import { Kbd } from '@/components/avara/blocks/KbdBlock'
+import {
+  MagicBento,
+  MagicBentoCard,
+} from '@/components/avara/blocks/MagicBentoBlock'
+import { MarqueeBlock } from '@/components/avara/blocks/MarqueeBlock'
+import { CardStack } from '@/components/avara/blocks/motion/CardStackBlock'
+import { Folder } from '@/components/avara/blocks/motion/FolderBlock'
+import { MasonryGrid } from '@/components/avara/blocks/motion/MasonryGridBlock'
+import { MemoriesCard } from '@/components/avara/blocks/motion/MemoriesCardBlock'
+import { NetworkGraph } from '@/components/avara/blocks/NetworkGraphBlock'
+import {
   CircularProgress,
   MultiProgress,
+  Progress,
+  ProgressField,
   ProgressSegment,
 } from '@/components/avara/blocks/ProgressBlock'
-import { TerminalBlock } from '@/components/avara/blocks/TerminalBlock'
-import { ColorPicker } from '@/components/avara/color-picker'
-import { AppleSelect } from '@/components/avara/blocks/AppleSelectBlock'
-import { ConversationTimeline } from '@/components/avara/blocks/ConversationTimelineBlock'
-import { SecureEnvelope } from '@/components/avara/blocks/SecureEnvelopeBlock'
-import { VerifyBadge } from '@/components/avara/blocks/VerifyBadgeBlock'
-import { Toggle } from '@/components/avara/blocks/ToggleBlock'
 import { QrCodeGenerator } from '@/components/avara/blocks/QrCodeGeneratorBlock'
-import { Kbd } from '@/components/avara/blocks/KbdBlock'
-import { MarqueeBlock } from '@/components/avara/blocks/MarqueeBlock'
-import { MasonryGrid } from '@/components/avara/blocks/motion/MasonryGridBlock'
+import { SecureEnvelope } from '@/components/avara/blocks/SecureEnvelopeBlock'
+import { Stepper, StepperContent } from '@/components/avara/blocks/StepperBlock'
+import { TerminalBlock } from '@/components/avara/blocks/TerminalBlock'
 import { TextAnimation } from '@/components/avara/blocks/TextAnimationBlock'
+import { Toggle } from '@/components/avara/blocks/ToggleBlock'
+import { VerifyBadge } from '@/components/avara/blocks/VerifyBadgeBlock'
+import { ColorPicker } from '@/components/avara/color-picker'
+import { InfrastructureTopology } from '@/components/avara/infrastructure-topology'
+import {
+  type DraggableCardItem,
+  DraggableCardList,
+} from '@/components/avara/motion/draggable-card-list'
 import { Button } from '@/components/ui/action-button'
-import { notify } from './demos'
+import { notify } from '@/lib/notify'
 
 const {
   Days: BookingCardDays,

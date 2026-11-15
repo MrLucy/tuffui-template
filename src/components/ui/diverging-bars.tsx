@@ -5,11 +5,12 @@
 import { ChartBar } from '@phosphor-icons/react'
 import {
   AnimatePresence,
-  MotionConfig,
   motion,
+  MotionConfig,
   useReducedMotion,
 } from 'motion/react'
 import { useLayoutEffect, useRef, useState } from 'react'
+
 import { RollingNumber } from '@/components/ui/rolling-number'
 import { Panel, Shell, ShellHeader } from '@/components/ui/surface'
 import { EASE_OUT, enter, exit } from '@/lib/motion-tokens'

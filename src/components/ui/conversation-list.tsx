@@ -7,15 +7,16 @@ import {
   ArrowUUpLeft,
   ChatsCircle,
   DotsThree,
+  MagnifyingGlass,
   NotePencil,
   PencilSimple,
   PushPin,
   PushPinSlash,
   Trash,
-  MagnifyingGlass,
 } from '@phosphor-icons/react'
-import { AnimatePresence, MotionConfig, motion } from 'motion/react'
+import { AnimatePresence, motion, MotionConfig } from 'motion/react'
 import { useEffect, useRef, useState, useSyncExternalStore } from 'react'
+
 import { IconButton } from '@/components/ui/action-button'
 import {
   Menu,

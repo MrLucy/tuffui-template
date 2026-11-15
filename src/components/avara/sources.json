@@ -2,9 +2,7 @@
   {
     "name": "animated-list",
     "source": "https://avaraui.com/r/animated-list.json",
-    "files": [
-      "src/components/custom/blocks/AnimatedListBlock.tsx"
-    ]
+    "files": ["src/components/custom/blocks/AnimatedListBlock.tsx"]
   },
   {
     "name": "animated-timeline",
@@ -17,9 +15,7 @@
   {
     "name": "apple-select",
     "source": "https://avaraui.com/r/apple-select.json",
-    "files": [
-      "src/components/custom/blocks/AppleSelectBlock.tsx"
-    ]
+    "files": ["src/components/custom/blocks/AppleSelectBlock.tsx"]
   },
   {
     "name": "avatar-stack",
@@ -40,23 +36,17 @@
   {
     "name": "card-stack-motion",
     "source": "https://avaraui.com/r/card-stack-motion.json",
-    "files": [
-      "src/components/custom/blocks/motion/CardStackBlock.tsx"
-    ]
+    "files": ["src/components/custom/blocks/motion/CardStackBlock.tsx"]
   },
   {
     "name": "color-picker",
     "source": "https://avaraui.com/r/color-picker.json",
-    "files": [
-      "src/components/custom/color-picker.tsx"
-    ]
+    "files": ["src/components/custom/color-picker.tsx"]
   },
   {
     "name": "conversation-timeline",
     "source": "https://avaraui.com/r/conversation-timeline.json",
-    "files": [
-      "src/components/custom/blocks/ConversationTimelineBlock.tsx"
-    ]
+    "files": ["src/components/custom/blocks/ConversationTimelineBlock.tsx"]
   },
   {
     "name": "copy-button",
@@ -69,9 +59,7 @@
   {
     "name": "draggable-card-list-motion",
     "source": "https://avaraui.com/r/draggable-card-list-motion.json",
-    "files": [
-      "src/components/custom/motion/draggable-card-list.tsx"
-    ]
+    "files": ["src/components/custom/motion/draggable-card-list.tsx"]
   },
   {
     "name": "flowchart",
@@ -84,58 +72,42 @@
   {
     "name": "folder-motion",
     "source": "https://avaraui.com/r/folder-motion.json",
-    "files": [
-      "src/components/custom/blocks/motion/FolderBlock.tsx"
-    ]
+    "files": ["src/components/custom/blocks/motion/FolderBlock.tsx"]
   },
   {
     "name": "half-stars",
     "source": "https://avaraui.com/r/half-stars.json",
-    "files": [
-      "src/components/custom/blocks/HalfStarsBlock.tsx"
-    ]
+    "files": ["src/components/custom/blocks/HalfStarsBlock.tsx"]
   },
   {
     "name": "infrastructure-topology",
     "source": "https://avaraui.com/r/infrastructure-topology.json",
-    "files": [
-      "src/components/custom/infrastructure-topology.tsx"
-    ]
+    "files": ["src/components/custom/infrastructure-topology.tsx"]
   },
   {
     "name": "kbd",
     "source": "https://avaraui.com/r/kbd.json",
-    "files": [
-      "src/components/custom/blocks/KbdBlock.tsx"
-    ]
+    "files": ["src/components/custom/blocks/KbdBlock.tsx"]
   },
   {
     "name": "magic-bento",
     "source": "https://avaraui.com/r/magic-bento.json",
-    "files": [
-      "src/components/custom/blocks/MagicBentoBlock.tsx"
-    ]
+    "files": ["src/components/custom/blocks/MagicBentoBlock.tsx"]
   },
   {
     "name": "marquee",
     "source": "https://avaraui.com/r/marquee.json",
-    "files": [
-      "src/components/custom/blocks/MarqueeBlock.tsx"
-    ]
+    "files": ["src/components/custom/blocks/MarqueeBlock.tsx"]
   },
   {
     "name": "masonry-grid-motion",
     "source": "https://avaraui.com/r/masonry-grid-motion.json",
-    "files": [
-      "src/components/custom/blocks/motion/MasonryGridBlock.tsx"
-    ]
+    "files": ["src/components/custom/blocks/motion/MasonryGridBlock.tsx"]
   },
   {
     "name": "memories-card-motion",
     "source": "https://avaraui.com/r/memories-card-motion.json",
-    "files": [
-      "src/components/custom/blocks/motion/MemoriesCardBlock.tsx"
-    ]
+    "files": ["src/components/custom/blocks/motion/MemoriesCardBlock.tsx"]
   },
   {
     "name": "network-graph",
@@ -157,9 +129,7 @@
   {
     "name": "qr-code-generator",
     "source": "https://avaraui.com/r/qr-code-generator.json",
-    "files": [
-      "src/components/custom/blocks/QrCodeGeneratorBlock.tsx"
-    ]
+    "files": ["src/components/custom/blocks/QrCodeGeneratorBlock.tsx"]
   },
   {
     "name": "secure-envelope",
@@ -172,9 +142,7 @@
   {
     "name": "stepper",
     "source": "https://avaraui.com/r/stepper.json",
-    "files": [
-      "src/components/custom/blocks/StepperBlock.tsx"
-    ]
+    "files": ["src/components/custom/blocks/StepperBlock.tsx"]
   },
   {
     "name": "terminal",
@@ -195,15 +163,11 @@
   {
     "name": "toggle",
     "source": "https://avaraui.com/r/toggle.json",
-    "files": [
-      "src/components/custom/blocks/ToggleBlock.tsx"
-    ]
+    "files": ["src/components/custom/blocks/ToggleBlock.tsx"]
   },
   {
     "name": "verify-badge",
     "source": "https://avaraui.com/r/verify-badge.json",
-    "files": [
-      "src/components/custom/blocks/VerifyBadgeBlock.tsx"
-    ]
+    "files": ["src/components/custom/blocks/VerifyBadgeBlock.tsx"]
   }
 ]

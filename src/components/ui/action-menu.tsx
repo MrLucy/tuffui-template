@@ -6,6 +6,7 @@ import { CaretRight, Check, type Icon } from '@phosphor-icons/react'
 import { AnimatePresence, motion, useReducedMotion } from 'motion/react'
 import { ContextMenu as ContextPrimitive, DropdownMenu } from 'radix-ui'
 import { useState } from 'react'
+
 import { EASE_OUT, instant } from '@/lib/motion-tokens'
 import { cn } from '@/lib/utils'
 

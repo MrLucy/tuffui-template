@@ -3,8 +3,10 @@
 'use client'
 
 import { CaretRight } from '@phosphor-icons/react'
-import { MotionConfig, motion } from 'motion/react'
-import { useEffect, useRef, useState, type ReactNode } from 'react'
+import { motion, MotionConfig } from 'motion/react'
+import { type ReactNode, useEffect, useRef, useState } from 'react'
+
+import { Spinner } from '@/components/ui/loader'
 import { ProgressBar } from '@/components/ui/progress-bar'
 import { RollingNumber } from '@/components/ui/rolling-number'
 import { Segmented } from '@/components/ui/segmented-control'
@@ -12,7 +14,6 @@ import { StatusPill } from '@/components/ui/status-pill'
 import { Panel, Shell } from '@/components/ui/surface'
 import { EASE_IN_OUT, instant } from '@/lib/motion-tokens'
 import { cn } from '@/lib/utils'
-import { Spinner } from '@/components/ui/loader'
 
 export type SpanKind = 'llm' | 'tool' | 'agent' | 'retrieval'
 

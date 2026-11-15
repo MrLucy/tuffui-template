@@ -1,9 +1,10 @@
 // Avara UI · MIT License · Source: https://avaraui.com/r/verify-badge.json
 'use client'
 
-import React from 'react'
-import { cn } from '@/lib/utils'
 import { Check } from 'lucide-react'
+import React from 'react'
+
+import { cn } from '@/lib/utils'
 
 export interface VerifyBadgeProps extends React.HTMLAttributes<HTMLDivElement> {
   color?: string

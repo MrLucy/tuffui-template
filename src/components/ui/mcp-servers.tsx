@@ -9,18 +9,20 @@ import {
   CircleNotch,
   HardDrives,
   Key,
-  WarningCircle,
   MagnifyingGlass,
+  WarningCircle,
 } from '@phosphor-icons/react'
 import {
   AnimatePresence,
-  MotionConfig,
   motion,
+  MotionConfig,
   useReducedMotion,
 } from 'motion/react'
 import { useState } from 'react'
+
 import { Button } from '@/components/ui/action-button'
 import { Switch } from '@/components/ui/choice-controls'
+import { EmptyState } from '@/components/ui/empty-state'
 import { RollingNumber } from '@/components/ui/rolling-number'
 import { Tag } from '@/components/ui/status-pill'
 import { Panel, Shell, ShellHeader } from '@/components/ui/surface'
@@ -33,7 +35,6 @@ import {
   spring,
 } from '@/lib/motion-tokens'
 import { cn } from '@/lib/utils'
-import { EmptyState } from '@/components/ui/empty-state'
 
 export type McpServerStatus =
   'connected' | 'connecting' | 'needs-auth' | 'error'

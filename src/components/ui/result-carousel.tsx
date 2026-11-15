@@ -8,8 +8,9 @@ import {
   MagnifyingGlass,
   Star,
 } from '@phosphor-icons/react'
-import { MotionConfig, motion } from 'motion/react'
+import { motion, MotionConfig } from 'motion/react'
 import { useCallback, useEffect, useRef, useState } from 'react'
+
 import { Button, IconButton } from '@/components/ui/action-button'
 import { RollingNumber } from '@/components/ui/rolling-number'
 import { Shell, ShellHeader } from '@/components/ui/surface'

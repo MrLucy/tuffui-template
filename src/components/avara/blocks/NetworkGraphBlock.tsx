@@ -1,8 +1,10 @@
 // Avara UI · MIT License · Source: https://avaraui.com/r/network-graph.json
 'use client'
 
-import { cn } from '@/lib/utils'
 import React, { useEffect, useMemo, useRef } from 'react'
+
+import { cn } from '@/lib/utils'
+
 import { springLinear } from './motion-curves'
 
 export type NetworkNode = {

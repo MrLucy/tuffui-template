@@ -5,6 +5,7 @@
 import { Gauge } from '@phosphor-icons/react'
 import { useReducedMotion } from 'motion/react'
 import { useEffect, useState } from 'react'
+
 import { RollingNumber } from '@/components/ui/rolling-number'
 import { Panel, Shell, ShellHeader } from '@/components/ui/surface'
 import { CSS_EASE_OUT } from '@/lib/motion-tokens'

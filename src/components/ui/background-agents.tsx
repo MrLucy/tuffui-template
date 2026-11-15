@@ -13,8 +13,9 @@ import {
   Prohibit,
   X,
 } from '@phosphor-icons/react'
-import { AnimatePresence, MotionConfig, motion } from 'motion/react'
-import { useId, useState, type KeyboardEvent } from 'react'
+import { AnimatePresence, motion, MotionConfig } from 'motion/react'
+import { type KeyboardEvent, useId, useState } from 'react'
+
 import { Button, IconButton } from '@/components/ui/action-button'
 import { RollingNumber } from '@/components/ui/rolling-number'
 import { StatusPill, type StatusTone } from '@/components/ui/status-pill'

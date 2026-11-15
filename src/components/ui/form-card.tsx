@@ -3,8 +3,9 @@
 'use client'
 
 import { CheckCircle, ClipboardText, PencilSimple } from '@phosphor-icons/react'
-import { AnimatePresence, MotionConfig, motion } from 'motion/react'
+import { AnimatePresence, motion, MotionConfig } from 'motion/react'
 import { useState } from 'react'
+
 import { Button } from '@/components/ui/action-button'
 import {
   Checkbox,

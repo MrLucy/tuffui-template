@@ -8,8 +8,9 @@ import {
   CheckCircle,
   Sparkle,
 } from '@phosphor-icons/react'
-import { AnimatePresence, MotionConfig, motion } from 'motion/react'
+import { AnimatePresence, motion, MotionConfig } from 'motion/react'
 import { useRef, useState } from 'react'
+
 import { Button } from '@/components/ui/action-button'
 import { Switch } from '@/components/ui/choice-controls'
 import { Segmented } from '@/components/ui/segmented-control'

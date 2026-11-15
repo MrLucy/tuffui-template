@@ -2,18 +2,19 @@
 // Free to use. If it helps you, you can support it: https://ko-fi.com/yurigokoryan
 'use client'
 
-import { formatCount } from '@/lib/locale'
 import { FlagCheckered } from '@phosphor-icons/react'
 import {
-  MotionConfig,
   motion,
+  MotionConfig,
   useReducedMotion,
   useSpring,
   useTransform,
   useVelocity,
 } from 'motion/react'
 import { useEffect, useId, useLayoutEffect, useRef, useState } from 'react'
+
 import { Panel, Shell, ShellHeader } from '@/components/ui/surface'
+import { formatCount } from '@/lib/locale'
 import { cn } from '@/lib/utils'
 
 export type EvalRacer = {

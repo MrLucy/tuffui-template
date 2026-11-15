@@ -1,8 +1,10 @@
 // Avara UI · MIT License · Source: https://avaraui.com/r/animated-timeline.json
 'use client'
 
-import { cn } from '@/lib/utils'
 import React, { forwardRef, useEffect, useRef, useState } from 'react'
+
+import { cn } from '@/lib/utils'
+
 import { getThemeStyles } from './animated-timeline-theme'
 
 // ==========================================

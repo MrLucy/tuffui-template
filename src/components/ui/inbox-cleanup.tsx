@@ -2,19 +2,20 @@
 // Free to use. If it helps you, you can support it: https://ko-fi.com/yurigokoryan
 'use client'
 
-import { formatCount } from '@/lib/locale'
-import { Broom, Check, Sparkle, type Icon } from '@phosphor-icons/react'
+import { Broom, Check, type Icon, Sparkle } from '@phosphor-icons/react'
 import {
   AnimatePresence,
-  MotionConfig,
   motion,
+  MotionConfig,
   useReducedMotion,
 } from 'motion/react'
 import { useEffect, useId, useRef, useState } from 'react'
+
 import { Button } from '@/components/ui/action-button'
 import { RollingNumber } from '@/components/ui/rolling-number'
 import { StatusPill } from '@/components/ui/status-pill'
 import { Panel, Shell, ShellHeader } from '@/components/ui/surface'
+import { formatCount } from '@/lib/locale'
 import { CSS_EASE_OUT, EASE_OUT, enter, exit } from '@/lib/motion-tokens'
 import { cn } from '@/lib/utils'
 

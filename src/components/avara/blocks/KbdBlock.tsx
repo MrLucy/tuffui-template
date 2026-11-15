@@ -1,8 +1,9 @@
 // Avara UI · MIT License · Source: https://avaraui.com/r/kbd.json
 'use client'
 
-import { cn } from '@/lib/utils'
 import React from 'react'
+
+import { cn } from '@/lib/utils'
 
 export interface KbdProps extends React.HTMLAttributes<HTMLElement> {
   size?: 'sm' | 'md' | 'lg'

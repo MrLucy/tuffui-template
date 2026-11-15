@@ -15,13 +15,15 @@ import {
 } from '@phosphor-icons/react'
 import {
   AnimatePresence,
-  MotionConfig,
   motion,
+  MotionConfig,
   useReducedMotion,
 } from 'motion/react'
-import { useEffect, useRef, useState, type KeyboardEvent } from 'react'
+import { type KeyboardEvent, useEffect, useRef, useState } from 'react'
+
 import { Button } from '@/components/ui/action-button'
 import { Checkbox } from '@/components/ui/choice-controls'
+import { EmptyState } from '@/components/ui/empty-state'
 import { RollingNumber } from '@/components/ui/rolling-number'
 import { Segmented } from '@/components/ui/segmented-control'
 import {
@@ -33,7 +35,6 @@ import {
 } from '@/components/ui/surface'
 import { EASE_OUT, exit as exitFast, instant } from '@/lib/motion-tokens'
 import { cn } from '@/lib/utils'
-import { EmptyState } from '@/components/ui/empty-state'
 
 export type ToolRisk = 'low' | 'medium' | 'high'
 export type GrantScope = 'once' | 'session' | 'always'

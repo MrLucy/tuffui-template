@@ -1,8 +1,9 @@
 // Avara UI · MIT License · Source: https://avaraui.com/r/toggle.json
 'use client'
 
-import { cn } from '@/lib/utils'
 import React, { forwardRef, useState } from 'react'
+
+import { cn } from '@/lib/utils'
 
 export interface ToggleProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   pressed?: boolean

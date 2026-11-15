@@ -93,3 +93,5 @@ export function matchesComponent(name: string, query: string) {
     .toLowerCase()
     .includes(query.toLowerCase())
 }
+
+export const componentNames = Object.keys(componentLabels)

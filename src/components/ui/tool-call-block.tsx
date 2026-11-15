@@ -13,11 +13,12 @@ import {
 } from '@phosphor-icons/react'
 import {
   AnimatePresence,
-  MotionConfig,
   motion,
+  MotionConfig,
   useReducedMotion,
 } from 'motion/react'
 import { useEffect, useId, useState } from 'react'
+
 import { Button, IconButton } from '@/components/ui/action-button'
 import { Inset, Panel, Shell } from '@/components/ui/surface'
 import {

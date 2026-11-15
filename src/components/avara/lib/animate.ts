@@ -1,9 +1,9 @@
 // Avara UI · MIT License · Source: https://avaraui.com/r/avatar-stack.json
 import {
+  type RefObject,
   useEffect,
   useState,
   useSyncExternalStore,
-  type RefObject,
 } from 'react'
 
 /**
