@@ -1,18 +1,15 @@
 import type { RouteObject } from 'react-router'
 import { createBrowserRouter } from 'react-router'
-import { RootLayout } from '@/layouts/root-layout'
+
 import {
-  OverviewPage,
-  FeaturePage,
   ComponentLabPage,
+  FeaturePage,
+  OverviewPage,
 } from '@/features/studio/pages'
+import { RootLayout } from '@/layouts/root-layout'
 import { AboutPage } from '@/pages/about'
 import { NotFoundPage } from '@/pages/not-found'
-import LoginPage from '@/pages/system/login'
-import { loginAction } from './login-action'
-import { requireAuth } from './guards'
 export const routes: RouteObject[] = [
-  { path: '/login', Component: LoginPage, action: loginAction },
   {
     path: '/',
     Component: RootLayout,
@@ -30,7 +27,7 @@ export const routes: RouteObject[] = [
         'settings',
       ].map((path) => ({ path, Component: FeaturePage })),
       { path: 'components', Component: ComponentLabPage },
-      { path: 'about', loader: requireAuth, Component: AboutPage },
+      { path: 'about', Component: AboutPage },
       { path: '*', Component: NotFoundPage },
     ],
   },
